@@ -55,43 +55,47 @@ a:hover {
 }
 
 /* ============================================================
-   CSS CUSTOM PROPERTIES — DEFAULT (ANARCHIST)
+   CSS CUSTOM PROPERTIES — NEUTRAL FALLBACKS
+   These are intentionally generic. Each theme style overrides
+   all of these via html[data-style="X"] { } which has higher
+   specificity than :root and therefore always wins.
    ============================================================ */
 
 :root {
-    --color-bg: #0d0d0d;
+    /* Neutral dark fallback — visible before any theme CSS loads */
+    --color-bg: #111111;
     --color-bg-secondary: #1a1a1a;
-    --color-bg-card: #111111;
-    --color-text: #e8e8e8;
+    --color-bg-card: #161616;
+    --color-text: #e0e0e0;
     --color-text-muted: #888888;
-    --color-accent: #cc0000;
-    --color-accent-hover: #ff2222;
-    --color-accent-secondary: #ff6600;
-    --color-border: #333333;
-    --color-header-bg: #0d0d0d;
-    --color-header-text: #ffffff;
-    --color-nav-bg: #1a0000;
-    --color-nav-text: #ff3333;
+    --color-accent: #888888;
+    --color-accent-hover: #aaaaaa;
+    --color-accent-secondary: #666666;
+    --color-border: #2a2a2a;
+    --color-header-bg: #111111;
+    --color-header-text: #e0e0e0;
+    --color-nav-bg: #0d0d0d;
+    --color-nav-text: #cccccc;
     --color-footer-bg: #0a0a0a;
-    --color-footer-text: #aaaaaa;
-    --color-tag-bg: #cc0000;
-    --color-tag-text: #ffffff;
-    --color-button-bg: #cc0000;
+    --color-footer-text: #888888;
+    --color-tag-bg: #333333;
+    --color-tag-text: #e0e0e0;
+    --color-button-bg: #444444;
     --color-button-text: #ffffff;
-    --color-button-hover: #ff0000;
+    --color-button-hover: #555555;
     --color-hero-overlay: rgba(0,0,0,0.6);
-    --font-heading: 'Impact', 'Anton', 'Arial Black', sans-serif;
-    --font-body: 'Courier New', 'Courier', monospace;
-    --font-nav: 'Impact', 'Arial Black', sans-serif;
+    --font-heading: Georgia, 'Times New Roman', serif;
+    --font-body: Georgia, 'Times New Roman', serif;
+    --font-nav: Georgia, sans-serif;
     --font-size-hero: clamp(2rem, 5vw, 3.5rem);
     --font-size-h1: clamp(1.6rem, 3vw, 2.4rem);
     --font-size-h2: clamp(1.3rem, 2.5vw, 1.8rem);
     --font-size-h3: clamp(1.1rem, 2vw, 1.4rem);
-    --border-radius: 0px;
-    --card-shadow: 3px 3px 0px var(--color-accent);
-    --header-border: 3px solid var(--color-accent);
-    --section-divider: 2px solid var(--color-accent);
-    --texture-overlay: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='1' height='1' fill='%23ffffff' opacity='0.03'/%3E%3C/svg%3E");
+    --border-radius: 4px;
+    --card-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    --header-border: 1px solid #333333;
+    --section-divider: 1px solid #333333;
+    --texture-overlay: none;
 }
 
 /* ============================================================

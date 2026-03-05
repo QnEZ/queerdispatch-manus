@@ -3,9 +3,12 @@
  * Hot pink & black, DIY zine energy, feminist punk,
  * bold handwritten-feel type, cut-and-paste aesthetic,
  * unapologetic, loud, and fierce
+ *
+ * FIX: All variables scoped to html[data-style="riot-grrrl"] to override
+ * the :root defaults in style.css regardless of load order.
  */
 
-:root {
+html[data-style="riot-grrrl"] {
     --color-bg: #0d0d0d;
     --color-bg-secondary: #1a0a14;
     --color-bg-card: #110810;
@@ -36,7 +39,7 @@
 }
 
 /* Rough paper texture */
-body {
+html[data-style="riot-grrrl"] body {
     background-color: #0d0d0d;
     background-image:
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
@@ -44,7 +47,7 @@ body {
 }
 
 /* Section titles — cut-out magazine style */
-.section-title {
+html[data-style="riot-grrrl"] .section-title {
     font-family: 'Abril Fatface', serif;
     color: #ff0080;
     letter-spacing: 3px;
@@ -54,7 +57,7 @@ body {
     display: inline-block;
 }
 
-.section-title::before {
+html[data-style="riot-grrrl"] .section-title::before {
     content: '';
     background: #ff0080;
     width: 20px;
@@ -64,7 +67,7 @@ body {
     vertical-align: middle;
 }
 
-.section-title::after {
+html[data-style="riot-grrrl"] .section-title::after {
     content: '';
     display: block;
     height: 3px;
@@ -79,12 +82,10 @@ body {
     width: 100%;
 }
 
-.section-header {
-    border-bottom: none;
-}
+html[data-style="riot-grrrl"] .section-header { border-bottom: none; }
 
 /* Cards — cut-and-paste zine style */
-.article-card {
+html[data-style="riot-grrrl"] .article-card {
     border: 2px solid #ff0080;
     border-radius: 0;
     background: #110810;
@@ -93,13 +94,13 @@ body {
     position: relative;
 }
 
-.article-card:hover {
+html[data-style="riot-grrrl"] .article-card:hover {
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0px #ff0080;
 }
 
 /* Diagonal stripe on card corner */
-.article-card::before {
+html[data-style="riot-grrrl"] .article-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -112,12 +113,12 @@ body {
 }
 
 /* Hero */
-.hero-content {
+html[data-style="riot-grrrl"] .hero-content {
     background: #1a0a14;
     border-left: 6px solid #ff0080;
 }
 
-.hero-title {
+html[data-style="riot-grrrl"] .hero-title {
     font-family: 'Abril Fatface', serif;
     color: #ffffff;
     text-shadow: 3px 3px 0px #ff0080;
@@ -126,7 +127,7 @@ body {
 }
 
 /* Site title */
-.site-title {
+html[data-style="riot-grrrl"] .site-title {
     font-family: 'Abril Fatface', serif;
     color: #ffffff;
     letter-spacing: 3px;
@@ -135,12 +136,12 @@ body {
 }
 
 /* Navigation */
-.main-navigation {
+html[data-style="riot-grrrl"] .main-navigation {
     background: #1a0010;
     border-bottom: 2px solid #ff0080;
 }
 
-.nav-menu a {
+html[data-style="riot-grrrl"] .nav-menu a {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 2px;
@@ -150,14 +151,14 @@ body {
     border-right: 1px solid #2a1020;
 }
 
-.nav-menu a:hover,
-.nav-menu .current-menu-item > a {
+html[data-style="riot-grrrl"] .nav-menu a:hover,
+html[data-style="riot-grrrl"] .nav-menu .current-menu-item > a {
     background: #ff0080;
     color: #ffffff;
 }
 
 /* Tags */
-.tag {
+html[data-style="riot-grrrl"] .tag {
     background: #ff0080;
     color: #ffffff;
     border-radius: 0;
@@ -168,13 +169,13 @@ body {
     text-transform: uppercase;
 }
 
-.tag:hover {
+html[data-style="riot-grrrl"] .tag:hover {
     background: #cc0060;
     color: #ffffff;
 }
 
 /* Widget titles */
-.widget-title {
+html[data-style="riot-grrrl"] .widget-title {
     background: #ff0080;
     font-family: 'Josefin Sans', sans-serif;
     letter-spacing: 3px;
@@ -183,18 +184,18 @@ body {
 }
 
 /* Footer */
-.site-footer {
+html[data-style="riot-grrrl"] .site-footer {
     border-top: 4px solid #ff0080;
     background: #0a0808;
 }
 
-.footer-widget-title {
+html[data-style="riot-grrrl"] .footer-widget-title {
     color: #ff0080;
     border-bottom-color: #2a1020;
 }
 
 /* Blockquote — zine manifesto */
-.single-post-content blockquote {
+html[data-style="riot-grrrl"] .single-post-content blockquote {
     border-left: 6px solid #ff0080;
     background: #1a0a14;
     font-family: 'Special Elite', monospace;
@@ -206,7 +207,7 @@ body {
     box-shadow: 4px 4px 0px #ff0080;
 }
 
-.single-post-content blockquote::before {
+html[data-style="riot-grrrl"] .single-post-content blockquote::before {
     content: '"';
     font-size: 5rem;
     color: #ff0080;
@@ -219,7 +220,7 @@ body {
 }
 
 /* Buttons */
-.btn {
+html[data-style="riot-grrrl"] .btn {
     background: #ff0080;
     border: 2px solid #ff0080;
     font-family: 'Josefin Sans', sans-serif;
@@ -230,7 +231,7 @@ body {
     text-transform: uppercase;
 }
 
-.btn:hover {
+html[data-style="riot-grrrl"] .btn:hover {
     background: transparent;
     color: #ff0080;
     box-shadow: 4px 4px 0px #ff0080;
@@ -238,13 +239,13 @@ body {
 }
 
 /* Breaking news */
-.breaking-news-bar {
+html[data-style="riot-grrrl"] .breaking-news-bar {
     background: #ff0080;
     border-bottom: 2px solid #cc0060;
 }
 
 /* Read more */
-.read-more {
+html[data-style="riot-grrrl"] .read-more {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 0.75rem;
     letter-spacing: 2px;
@@ -256,46 +257,36 @@ body {
 }
 
 /* List items */
-.article-list-item {
+html[data-style="riot-grrrl"] .article-list-item {
     border: 2px solid #2a1020;
     border-left: 4px solid #ff0080;
     border-radius: 0;
     box-shadow: 3px 3px 0px #ff0080;
 }
 
-.article-list-item:hover {
+html[data-style="riot-grrrl"] .article-list-item:hover {
     transform: translate(-2px, -2px);
     box-shadow: 5px 5px 0px #ff0080;
     border-color: #ff0080;
 }
 
 /* Scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: #0d0d0d;
-}
-::-webkit-scrollbar-thumb {
-    background: #ff0080;
-    border-radius: 0;
-}
+html[data-style="riot-grrrl"] ::-webkit-scrollbar { width: 8px; }
+html[data-style="riot-grrrl"] ::-webkit-scrollbar-track { background: #0d0d0d; }
+html[data-style="riot-grrrl"] ::-webkit-scrollbar-thumb { background: #ff0080; border-radius: 0; }
 
 /* Content links */
-.single-post-content a {
+html[data-style="riot-grrrl"] .single-post-content a {
     color: #ff0080;
     text-decoration: underline;
     text-decoration-style: wavy;
 }
 
 /* Punk asterisk decoration */
-.card-meta::before {
-    content: '★ ';
-    color: #ff0080;
-}
+html[data-style="riot-grrrl"] .card-meta::before { content: '★ '; color: #ff0080; }
 
 /* Style switcher */
-.style-switcher-toggle {
+html[data-style="riot-grrrl"] .style-switcher-toggle {
     background: #ff0080;
     border-radius: 0;
     font-family: 'Josefin Sans', sans-serif;
@@ -304,21 +295,21 @@ body {
 }
 
 /* Pagination */
-.page-numbers {
+html[data-style="riot-grrrl"] .page-numbers {
     border-radius: 0;
     border: 2px solid #2a1020;
     box-shadow: 2px 2px 0px #ff0080;
 }
 
-.page-numbers:hover,
-.page-numbers.current {
+html[data-style="riot-grrrl"] .page-numbers:hover,
+html[data-style="riot-grrrl"] .page-numbers.current {
     background: #ff0080;
     border-color: #ff0080;
     box-shadow: 3px 3px 0px rgba(255,0,128,0.4);
 }
 
 /* Post navigation */
-.post-navigation {
+html[data-style="riot-grrrl"] .post-navigation {
     border-top: 2px solid #ff0080;
     border-bottom: 2px solid #ff0080;
     padding: 20px 0;
@@ -326,14 +317,14 @@ body {
 }
 
 /* Horizontal rules */
-hr {
+html[data-style="riot-grrrl"] hr {
     border: none;
     border-top: 2px solid #ff0080;
     margin: 32px 0;
     position: relative;
 }
 
-hr::after {
+html[data-style="riot-grrrl"] hr::after {
     content: '★';
     color: #ff0080;
     position: absolute;

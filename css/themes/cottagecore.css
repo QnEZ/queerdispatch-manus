@@ -2,9 +2,12 @@
  * QueerDispatch — Cottagecore Queer Style
  * Soft sage greens, warm creams, dusty roses, floral patterns,
  * cozy nature aesthetic, handmade warmth, queer pastoral
+ *
+ * FIX: All variables scoped to html[data-style="cottagecore"] to override
+ * the :root defaults in style.css regardless of load order.
  */
 
-:root {
+html[data-style="cottagecore"] {
     --color-bg: #f5f0e8;
     --color-bg-secondary: #ede8dc;
     --color-bg-card: #f8f4ec;
@@ -35,7 +38,7 @@
 }
 
 /* Warm paper texture background */
-body {
+html[data-style="cottagecore"] body {
     background-color: #f5f0e8;
     background-image:
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ccircle cx='20' cy='20' r='1' fill='%235a7a3a' opacity='0.06'/%3E%3Ccircle cx='60' cy='40' r='1.5' fill='%23c87a80' opacity='0.05'/%3E%3Ccircle cx='80' cy='70' r='1' fill='%235a7a3a' opacity='0.04'/%3E%3Ccircle cx='40' cy='80' r='1' fill='%23c87a80' opacity='0.06'/%3E%3C/svg%3E");
@@ -43,7 +46,7 @@ body {
 }
 
 /* Floral section dividers */
-.section-title {
+html[data-style="cottagecore"] .section-title {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     font-style: italic;
@@ -52,7 +55,7 @@ body {
     position: relative;
 }
 
-.section-title::before {
+html[data-style="cottagecore"] .section-title::before {
     content: '🌿';
     margin-right: 10px;
     font-size: 0.9em;
@@ -62,7 +65,7 @@ body {
     display: inline;
 }
 
-.section-title::after {
+html[data-style="cottagecore"] .section-title::after {
     content: '';
     display: block;
     height: 2px;
@@ -72,12 +75,10 @@ body {
     opacity: 0.5;
 }
 
-.section-header {
-    border-bottom: none;
-}
+html[data-style="cottagecore"] .section-header { border-bottom: none; }
 
 /* Cards — like pressed flower journals */
-.article-card {
+html[data-style="cottagecore"] .article-card {
     border: 1px solid #d8cfc0;
     border-radius: 8px;
     background: #f8f4ec;
@@ -85,39 +86,39 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.article-card:hover {
+html[data-style="cottagecore"] .article-card:hover {
     transform: translateY(-4px) rotate(-0.5deg);
     box-shadow: 0 8px 24px rgba(90,122,58,0.2);
 }
 
-.article-card:nth-child(even):hover {
+html[data-style="cottagecore"] .article-card:nth-child(even):hover {
     transform: translateY(-4px) rotate(0.5deg);
 }
 
 /* Soft image treatment */
-.card-thumbnail img {
+html[data-style="cottagecore"] .card-thumbnail img {
     filter: saturate(0.85) sepia(0.1);
     transition: filter 0.3s ease;
 }
 
-.article-card:hover .card-thumbnail img {
+html[data-style="cottagecore"] .article-card:hover .card-thumbnail img {
     filter: saturate(1) sepia(0);
 }
 
 /* Hero — like a cottage window */
-.hero-section {
+html[data-style="cottagecore"] .hero-section {
     border: 2px solid #d8cfc0;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(90,122,58,0.15);
 }
 
-.hero-content {
+html[data-style="cottagecore"] .hero-content {
     background: linear-gradient(135deg, #ede8dc, #f5f0e8);
     border-left: 4px solid #5a7a3a;
 }
 
-.hero-title {
+html[data-style="cottagecore"] .hero-title {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     color: #3a2e20;
@@ -126,7 +127,7 @@ body {
 }
 
 /* Site title */
-.site-title {
+html[data-style="cottagecore"] .site-title {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     font-style: italic;
@@ -136,17 +137,17 @@ body {
 }
 
 /* Navigation */
-.site-header {
+html[data-style="cottagecore"] .site-header {
     background: #e8e0d0;
     border-bottom: 2px solid #c8b890;
 }
 
-.main-navigation {
+html[data-style="cottagecore"] .main-navigation {
     background: #d8d0c0;
     border-bottom: 1px solid #c8b890;
 }
 
-.nav-menu a {
+html[data-style="cottagecore"] .nav-menu a {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 2px;
@@ -155,14 +156,14 @@ body {
     font-weight: 700;
 }
 
-.nav-menu a:hover,
-.nav-menu .current-menu-item > a {
+html[data-style="cottagecore"] .nav-menu a:hover,
+html[data-style="cottagecore"] .nav-menu .current-menu-item > a {
     background: #5a7a3a;
     color: #ffffff;
 }
 
 /* Tags — botanical labels */
-.tag {
+html[data-style="cottagecore"] .tag {
     background: #c87a80;
     color: #ffffff;
     border-radius: 4px;
@@ -173,13 +174,13 @@ body {
     padding: 3px 10px;
 }
 
-.tag:hover {
+html[data-style="cottagecore"] .tag:hover {
     background: #a05a60;
     color: #ffffff;
 }
 
 /* Widget titles */
-.widget-title {
+html[data-style="cottagecore"] .widget-title {
     background: #5a7a3a;
     font-family: 'Josefin Sans', sans-serif;
     letter-spacing: 3px;
@@ -188,33 +189,28 @@ body {
 }
 
 /* Sidebar */
-.widget {
+html[data-style="cottagecore"] .widget {
     border: 1px solid #d8cfc0;
     border-radius: 8px;
     background: #f8f4ec;
 }
 
 /* Footer */
-.site-footer {
+html[data-style="cottagecore"] .site-footer {
     background: #e0d8c8;
     border-top: 2px solid #c8b890;
 }
 
-.footer-widget-title {
+html[data-style="cottagecore"] .footer-widget-title {
     color: #5a7a3a;
     border-bottom-color: #c8b890;
 }
 
-.footer-links a {
-    color: #6a5a40;
-}
-
-.footer-links a:hover {
-    color: #5a7a3a;
-}
+html[data-style="cottagecore"] .footer-links a { color: #6a5a40; }
+html[data-style="cottagecore"] .footer-links a:hover { color: #5a7a3a; }
 
 /* Blockquote — handwritten note feel */
-.single-post-content blockquote {
+html[data-style="cottagecore"] .single-post-content blockquote {
     border-left: 4px solid #c87a80;
     background: #ede8dc;
     font-style: italic;
@@ -224,7 +220,7 @@ body {
 }
 
 /* Buttons */
-.btn {
+html[data-style="cottagecore"] .btn {
     background: #5a7a3a;
     border: none;
     font-family: 'Josefin Sans', sans-serif;
@@ -234,18 +230,18 @@ body {
     box-shadow: 0 2px 8px rgba(90,122,58,0.3);
 }
 
-.btn:hover {
+html[data-style="cottagecore"] .btn:hover {
     background: #3a5a20;
     box-shadow: 0 4px 16px rgba(90,122,58,0.4);
 }
 
 /* Breaking news */
-.breaking-news-bar {
+html[data-style="cottagecore"] .breaking-news-bar {
     background: linear-gradient(90deg, #5a7a3a, #c87a80, #5a7a3a);
 }
 
 /* Read more */
-.read-more {
+html[data-style="cottagecore"] .read-more {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 0.75rem;
     letter-spacing: 2px;
@@ -253,108 +249,85 @@ body {
     color: #5a7a3a;
 }
 
-.read-more::after {
-    content: ' 🌿';
-}
+html[data-style="cottagecore"] .read-more::after { content: ' 🌿'; }
 
 /* List items */
-.article-list-item {
+html[data-style="cottagecore"] .article-list-item {
     border-radius: 8px;
     border: 1px solid #d8cfc0;
     background: #f8f4ec;
 }
 
-.article-list-item:hover {
+html[data-style="cottagecore"] .article-list-item:hover {
     border-color: #5a7a3a;
     transform: translateX(6px);
 }
 
 /* Input fields */
-input[type="email"],
-input[type="search"],
-input[type="text"],
-textarea {
+html[data-style="cottagecore"] input[type="email"],
+html[data-style="cottagecore"] input[type="search"],
+html[data-style="cottagecore"] input[type="text"],
+html[data-style="cottagecore"] textarea {
     border-radius: 24px;
     background: #f8f4ec;
     border-color: #d8cfc0;
     color: #3a2e20;
 }
 
-input[type="email"]:focus,
-input[type="search"]:focus {
+html[data-style="cottagecore"] input[type="email"]:focus,
+html[data-style="cottagecore"] input[type="search"]:focus {
     border-color: #5a7a3a;
 }
 
 /* Newsletter form */
-.newsletter-form button {
+html[data-style="cottagecore"] .newsletter-form button {
     border-radius: 24px;
     background: #5a7a3a;
 }
 
 /* Scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: #f5f0e8;
-}
-::-webkit-scrollbar-thumb {
-    background: #c8b890;
-    border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #5a7a3a;
-}
+html[data-style="cottagecore"] ::-webkit-scrollbar { width: 8px; }
+html[data-style="cottagecore"] ::-webkit-scrollbar-track { background: #f5f0e8; }
+html[data-style="cottagecore"] ::-webkit-scrollbar-thumb { background: #c8b890; border-radius: 4px; }
+html[data-style="cottagecore"] ::-webkit-scrollbar-thumb:hover { background: #5a7a3a; }
 
 /* Post content */
-.single-post-content {
-    color: #3a2e20;
-}
-
-.single-post-content a {
+html[data-style="cottagecore"] .single-post-content { color: #3a2e20; }
+html[data-style="cottagecore"] .single-post-content a {
     color: #5a7a3a;
     text-decoration: underline;
     text-decoration-style: dotted;
 }
 
 /* Style switcher */
-.style-switcher-toggle {
+html[data-style="cottagecore"] .style-switcher-toggle {
     background: #5a7a3a;
     border-radius: 6px 0 0 6px;
 }
 
-.style-switcher-panel {
+html[data-style="cottagecore"] .style-switcher-panel {
     background: #f8f4ec;
     border-color: #d8cfc0;
 }
 
-.style-switcher-panel h3 {
-    color: #3a2e20;
-}
-
-.style-name {
-    color: #3a2e20;
-}
-
-.style-option:hover {
-    background: #ede8dc;
-}
-
-.style-option.active {
+html[data-style="cottagecore"] .style-switcher-panel h3 { color: #3a2e20; }
+html[data-style="cottagecore"] .style-name { color: #3a2e20; }
+html[data-style="cottagecore"] .style-option:hover { background: #ede8dc; }
+html[data-style="cottagecore"] .style-option.active {
     border-color: #5a7a3a;
     background: #ede8dc;
 }
 
 /* Pagination */
-.page-numbers {
+html[data-style="cottagecore"] .page-numbers {
     background: #f8f4ec;
     border-color: #d8cfc0;
     color: #3a2e20;
     border-radius: 50%;
 }
 
-.page-numbers:hover,
-.page-numbers.current {
+html[data-style="cottagecore"] .page-numbers:hover,
+html[data-style="cottagecore"] .page-numbers.current {
     background: #5a7a3a;
     border-color: #5a7a3a;
     color: #ffffff;

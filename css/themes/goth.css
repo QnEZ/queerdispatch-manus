@@ -2,11 +2,14 @@
  * QueerDispatch — Goth Style
  * Dark academia, deep purples & blacks, ornate Victorian borders,
  * gothic serif typography, crimson accents, candlelit atmosphere
+ *
+ * FIX: All variables scoped to html[data-style="goth"] to override
+ * the :root defaults in style.css regardless of load order.
  */
 
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
-:root {
+html[data-style="goth"] {
     --color-bg: #080810;
     --color-bg-secondary: #0f0f1a;
     --color-bg-card: #0d0d18;
@@ -37,7 +40,7 @@
 }
 
 /* Gothic background texture */
-body {
+html[data-style="goth"] body {
     background-image:
         radial-gradient(ellipse at top, #0f0a1a 0%, #080810 60%),
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z' fill='none' stroke='%23ffffff' stroke-width='0.3' opacity='0.03'/%3E%3C/svg%3E");
@@ -45,7 +48,7 @@ body {
 }
 
 /* Ornate section titles with decorative elements */
-.section-title {
+html[data-style="goth"] .section-title {
     font-family: 'Cinzel', serif;
     font-weight: 700;
     letter-spacing: 4px;
@@ -56,14 +59,14 @@ body {
     padding: 0 24px;
 }
 
-.section-title::before {
+html[data-style="goth"] .section-title::before {
     content: '✦';
     color: #8b1a4a;
     margin-right: 16px;
     font-size: 0.8em;
 }
 
-.section-title::after {
+html[data-style="goth"] .section-title::after {
     content: '✦';
     color: #8b1a4a;
     margin-left: 16px;
@@ -74,13 +77,13 @@ body {
     height: auto;
 }
 
-.section-header {
+html[data-style="goth"] .section-header {
     border-bottom: none;
     position: relative;
     padding-bottom: 16px;
 }
 
-.section-header::after {
+html[data-style="goth"] .section-header::after {
     content: '';
     display: block;
     height: 1px;
@@ -89,14 +92,14 @@ body {
 }
 
 /* Ornate card borders */
-.article-card {
+html[data-style="goth"] .article-card {
     border: 1px solid #1e1a2e;
     border-top: 2px solid #4a0e6b;
     background: linear-gradient(180deg, #0d0d18 0%, #080810 100%);
     position: relative;
 }
 
-.article-card::before {
+html[data-style="goth"] .article-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -106,19 +109,19 @@ body {
     background: linear-gradient(90deg, transparent, #8b1a4a, transparent);
 }
 
-.article-card:hover {
+html[data-style="goth"] .article-card:hover {
     box-shadow: 0 8px 32px rgba(139,26,74,0.4), 0 0 0 1px rgba(139,26,74,0.3);
     transform: translateY(-4px);
 }
 
 /* Gothic hero */
-.hero-content {
+html[data-style="goth"] .hero-content {
     background: linear-gradient(135deg, #0f0a1a, #080810);
     border-left: 3px solid #8b1a4a;
     position: relative;
 }
 
-.hero-content::before {
+html[data-style="goth"] .hero-content::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -126,7 +129,7 @@ body {
     pointer-events: none;
 }
 
-.hero-title {
+html[data-style="goth"] .hero-title {
     font-family: 'Cinzel', serif;
     font-weight: 900;
     letter-spacing: 2px;
@@ -135,7 +138,7 @@ body {
 }
 
 /* Site title — Fraktur/Gothic feel */
-.site-title {
+html[data-style="goth"] .site-title {
     font-family: 'Cinzel', serif;
     font-weight: 900;
     letter-spacing: 3px;
@@ -144,12 +147,12 @@ body {
 }
 
 /* Navigation — dark and elegant */
-.main-navigation {
+html[data-style="goth"] .main-navigation {
     background: linear-gradient(180deg, #0a0a14, #080810);
     border-bottom: 1px solid #1e1a2e;
 }
 
-.nav-menu a {
+html[data-style="goth"] .nav-menu a {
     font-family: 'Cinzel', serif;
     font-size: 0.75rem;
     letter-spacing: 2px;
@@ -157,14 +160,14 @@ body {
     text-transform: uppercase;
 }
 
-.nav-menu a:hover,
-.nav-menu .current-menu-item > a {
+html[data-style="goth"] .nav-menu a:hover,
+html[data-style="goth"] .nav-menu .current-menu-item > a {
     background: linear-gradient(180deg, #4a0e6b, #8b1a4a);
     color: #f0e8ff;
 }
 
 /* Tags — purple jewel-like */
-.tag {
+html[data-style="goth"] .tag {
     background: linear-gradient(135deg, #4a0e6b, #8b1a4a);
     border-radius: 2px;
     font-family: 'Cinzel', serif;
@@ -174,7 +177,7 @@ body {
 }
 
 /* Widget titles — ornate */
-.widget-title {
+html[data-style="goth"] .widget-title {
     background: linear-gradient(135deg, #4a0e6b, #8b1a4a);
     font-family: 'Cinzel', serif;
     letter-spacing: 3px;
@@ -183,13 +186,13 @@ body {
 }
 
 /* Footer */
-.site-footer {
+html[data-style="goth"] .site-footer {
     border-top: 1px solid #1e1a2e;
     background: linear-gradient(0deg, #050508, #080810);
     position: relative;
 }
 
-.site-footer::before {
+html[data-style="goth"] .site-footer::before {
     content: '';
     display: block;
     height: 2px;
@@ -202,7 +205,7 @@ body {
 }
 
 /* Blockquote — gothic manuscript style */
-.single-post-content blockquote {
+html[data-style="goth"] .single-post-content blockquote {
     border-left: 4px solid #8b1a4a;
     background: linear-gradient(135deg, #0f0a1a, #0d0d18);
     font-style: italic;
@@ -212,7 +215,7 @@ body {
     position: relative;
 }
 
-.single-post-content blockquote::before {
+html[data-style="goth"] .single-post-content blockquote::before {
     content: '\201C';
     font-size: 4rem;
     color: #8b1a4a;
@@ -224,7 +227,7 @@ body {
 }
 
 /* Buttons */
-.btn {
+html[data-style="goth"] .btn {
     background: linear-gradient(135deg, #8b1a4a, #4a0e6b);
     border: 1px solid rgba(200,184,232,0.2);
     font-family: 'Cinzel', serif;
@@ -233,18 +236,18 @@ body {
     box-shadow: 0 2px 8px rgba(139,26,74,0.4);
 }
 
-.btn:hover {
+html[data-style="goth"] .btn:hover {
     background: linear-gradient(135deg, #c02060, #6b1a9a);
     box-shadow: 0 4px 16px rgba(139,26,74,0.6);
 }
 
 /* Breaking news */
-.breaking-news-bar {
+html[data-style="goth"] .breaking-news-bar {
     background: linear-gradient(90deg, #4a0e6b, #8b1a4a, #4a0e6b);
 }
 
 /* Read more */
-.read-more {
+html[data-style="goth"] .read-more {
     font-family: 'Cinzel', serif;
     font-size: 0.75rem;
     letter-spacing: 2px;
@@ -252,33 +255,20 @@ body {
 }
 
 /* Scrollbar styling */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: #080810;
-}
-::-webkit-scrollbar-thumb {
-    background: #4a0e6b;
-    border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #8b1a4a;
-}
+html[data-style="goth"] ::-webkit-scrollbar { width: 8px; }
+html[data-style="goth"] ::-webkit-scrollbar-track { background: #080810; }
+html[data-style="goth"] ::-webkit-scrollbar-thumb { background: #4a0e6b; border-radius: 4px; }
+html[data-style="goth"] ::-webkit-scrollbar-thumb:hover { background: #8b1a4a; }
 
 /* Glow effect on hover for links */
-a:hover {
-    text-shadow: 0 0 8px rgba(139,26,74,0.6);
-}
+html[data-style="goth"] a:hover { text-shadow: 0 0 8px rgba(139,26,74,0.6); }
 
 /* Post meta separator */
-.card-meta .separator,
-.single-post-meta .separator {
-    color: #8b1a4a;
-}
+html[data-style="goth"] .card-meta .separator,
+html[data-style="goth"] .single-post-meta .separator { color: #8b1a4a; }
 
 /* Ornate horizontal rules */
-hr {
+html[data-style="goth"] hr {
     border: none;
     text-align: center;
     overflow: visible;
@@ -286,7 +276,7 @@ hr {
     color: #4a0e6b;
 }
 
-hr::before {
+html[data-style="goth"] hr::before {
     content: '⸻ ✦ ⸻';
     font-size: 1rem;
     color: #8b1a4a;

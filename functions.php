@@ -265,20 +265,30 @@ add_action( 'wp_ajax_queerdispatch_save_style', 'queerdispatch_save_style' );
 add_action( 'wp_ajax_nopriv_queerdispatch_save_style', 'queerdispatch_save_style' );
 
 /**
- * Output the current style CSS link in the head
+ * Load ALL theme CSS files simultaneously.
+ *
+ * WHY: Each theme file scopes its rules to html[data-style="X"] { ... }
+ * which has higher specificity than :root. So all files can be loaded at
+ * once — only the one matching the current data-style attribute applies.
+ * This eliminates the old bug where only one file was swapped via JS,
+ * causing load-order specificity races that always resolved to Anarchist.
  */
 function queerdispatch_output_style_css() {
     $current_style = queerdispatch_get_current_style();
     $theme_uri     = get_template_directory_uri();
     $theme_dir     = get_template_directory();
-    $css_file      = "/css/themes/{$current_style}.css";
+    $styles        = queerdispatch_get_styles();
 
-    if ( file_exists( $theme_dir . $css_file ) ) {
-        echo '<link rel="stylesheet" id="queerdispatch-theme-style-css" href="' . esc_url( $theme_uri . $css_file ) . '" media="all">' . "\n";
+    // Set data-style on <html> BEFORE any CSS is parsed to prevent FOUC
+    echo '<script>document.documentElement.setAttribute("data-style","' . esc_js( $current_style ) . '");</script>' . "\n";
+
+    // Load all theme CSS files — each is scoped to html[data-style="X"]
+    foreach ( array_keys( $styles ) as $style_id ) {
+        $css_file = "/css/themes/{$style_id}.css";
+        if ( file_exists( $theme_dir . $css_file ) ) {
+            echo '<link rel="stylesheet" id="queerdispatch-theme-' . esc_attr( $style_id ) . '-css" href="' . esc_url( $theme_uri . $css_file ) . '" media="all">' . "\n";
+        }
     }
-
-    // Output the current style as a data attribute on body (for JS)
-    echo '<script>document.documentElement.setAttribute("data-style", "' . esc_js( $current_style ) . '");</script>' . "\n";
 }
 add_action( 'wp_head', 'queerdispatch_output_style_css', 5 );
 
