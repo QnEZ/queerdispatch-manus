@@ -1,0 +1,221 @@
+/*
+ * QueerDispatch — Anarchist Style
+ * Black & red, DIY punk zine, distressed textures, raw energy
+ */
+
+:root {
+    --color-bg: #0d0d0d;
+    --color-bg-secondary: #1a1a1a;
+    --color-bg-card: #111111;
+    --color-text: #e8e8e8;
+    --color-text-muted: #888888;
+    --color-accent: #cc0000;
+    --color-accent-hover: #ff2222;
+    --color-accent-secondary: #ff6600;
+    --color-border: #2a2a2a;
+    --color-header-bg: #0d0d0d;
+    --color-header-text: #ffffff;
+    --color-nav-bg: #1a0000;
+    --color-nav-text: #ff3333;
+    --color-footer-bg: #0a0a0a;
+    --color-footer-text: #aaaaaa;
+    --color-tag-bg: #cc0000;
+    --color-tag-text: #ffffff;
+    --color-button-bg: #cc0000;
+    --color-button-text: #ffffff;
+    --color-button-hover: #ff0000;
+    --font-heading: 'Anton', 'Impact', 'Arial Black', sans-serif;
+    --font-body: 'Courier Prime', 'Courier New', monospace;
+    --font-nav: 'Anton', 'Impact', sans-serif;
+    --border-radius: 0px;
+    --card-shadow: 3px 3px 0px var(--color-accent);
+    --header-border: 3px solid #cc0000;
+    --section-divider: 2px solid #cc0000;
+}
+
+/* Distressed texture overlay on body */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(255,255,255,0.01) 2px,
+            rgba(255,255,255,0.01) 4px
+        );
+    pointer-events: none;
+    z-index: 9998;
+}
+
+/* Spray-paint style section titles */
+.section-title {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    height: 3px;
+    background: repeating-linear-gradient(
+        90deg,
+        #cc0000 0px,
+        #cc0000 8px,
+        transparent 8px,
+        transparent 12px
+    );
+    margin-top: 6px;
+}
+
+/* Torn-edge card effect */
+.article-card {
+    border-left: 4px solid #cc0000;
+    position: relative;
+}
+
+.article-card::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: repeating-linear-gradient(
+        90deg,
+        #cc0000 0px,
+        #cc0000 6px,
+        transparent 6px,
+        transparent 10px
+    );
+}
+
+/* Hero — bold propaganda poster feel */
+.hero-content {
+    border-left: 6px solid #cc0000;
+    background: #1a0000;
+}
+
+.hero-title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0px rgba(204,0,0,0.4);
+}
+
+/* Navigation — stencil style */
+.nav-menu a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    border-right: 1px solid #2a0000;
+}
+
+.nav-menu a:hover,
+.nav-menu .current-menu-item > a {
+    background-color: #cc0000;
+    color: #ffffff;
+}
+
+/* Site title — bold impact */
+.site-title {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-shadow: 2px 2px 0px #cc0000;
+}
+
+/* Breaking news bar */
+.breaking-news-bar {
+    background: repeating-linear-gradient(
+        45deg,
+        #cc0000,
+        #cc0000 10px,
+        #990000 10px,
+        #990000 20px
+    );
+}
+
+/* Widget titles */
+.widget-title {
+    background: #cc0000;
+    font-family: 'Anton', 'Impact', sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Footer */
+.site-footer {
+    border-top: 4px solid #cc0000;
+}
+
+/* Blockquote — manifesto style */
+.single-post-content blockquote {
+    border-left: 6px solid #cc0000;
+    background: #1a0000;
+    font-style: normal;
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Tags */
+.tag {
+    border-radius: 0;
+    font-family: 'Anton', 'Impact', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* Read more links */
+.read-more {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Anton', 'Impact', sans-serif;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Anton', 'Impact', sans-serif;
+    border: 2px solid #cc0000;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #cc0000;
+}
+
+/* Style switcher panel */
+.style-switcher-toggle {
+    background: #cc0000;
+    border-radius: 0;
+    font-family: 'Anton', 'Impact', sans-serif;
+    letter-spacing: 2px;
+}
+
+/* Horizontal rule */
+hr {
+    border: none;
+    border-top: 2px solid #cc0000;
+    margin: 32px 0;
+}
+
+/* Links in content */
+.single-post-content a {
+    color: #ff3333;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
+
+/* Post navigation */
+.post-navigation {
+    border-top: 2px solid #cc0000;
+    border-bottom: 2px solid #cc0000;
+    padding: 20px 0;
+    margin: 32px 0;
+}
