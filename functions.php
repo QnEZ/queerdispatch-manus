@@ -523,6 +523,11 @@ add_action( 'init', 'queerdispatch_register_post_types' );
 // ============================================================
 
 require_once get_template_directory() . '/inc/template-functions.php';
+require_once get_template_directory() . '/inc/class-github-updater.php';
+require_once get_template_directory() . '/inc/admin-version-page.php';
+
+// Instantiate the GitHub auto-updater
+new QueerDispatch_GitHub_Updater();
 
 // ============================================================
 // SECURITY
