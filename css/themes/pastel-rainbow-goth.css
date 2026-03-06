@@ -3,11 +3,11 @@
  * Soft pastels + dark gothic base, kawaii-goth hybrid,
  * cotton candy colors on black, dreamy and dark simultaneously
  *
- * FIX: All variables scoped to html[data-style="pastel-rainbow-goth"] to override
+ * FIX: All variables scoped to body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth to override
  * the :root defaults in style.css regardless of load order.
  */
 
-html[data-style="pastel-rainbow-goth"] {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth {
     --color-bg: #0d0a14;
     --color-bg-secondary: #160e20;
     --color-bg-card: #120c1c;
@@ -38,7 +38,7 @@ html[data-style="pastel-rainbow-goth"] {
 }
 
 /* Dreamy dark background with subtle rainbow shimmer */
-html[data-style="pastel-rainbow-goth"] body {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth body {
     background-color: #0d0a14;
     background-image:
         radial-gradient(ellipse at 0% 0%, rgba(255,157,226,0.08) 0%, transparent 40%),
@@ -48,15 +48,15 @@ html[data-style="pastel-rainbow-goth"] body {
 }
 
 /* Rainbow shimmer on scrollbar */
-html[data-style="pastel-rainbow-goth"] ::-webkit-scrollbar { width: 8px; }
-html[data-style="pastel-rainbow-goth"] ::-webkit-scrollbar-track { background: #0d0a14; }
-html[data-style="pastel-rainbow-goth"] ::-webkit-scrollbar-thumb {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth ::-webkit-scrollbar { width: 8px; }
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth ::-webkit-scrollbar-track { background: #0d0a14; }
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth ::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, #ff9de2, #b8f0ff, #c8f0a0, #ffd0a0, #ff9de2);
     border-radius: 4px;
 }
 
 /* Section titles — pastel rainbow gradient */
-html[data-style="pastel-rainbow-goth"] .section-title {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .section-title {
     font-family: 'Abril Fatface', serif;
     background: linear-gradient(90deg, #ff9de2, #b8f0ff, #c8f0a0, #ffd0a0, #ff9de2);
     background-size: 200% auto;
@@ -72,14 +72,14 @@ html[data-style="pastel-rainbow-goth"] .section-title {
     100% { background-position: 200% center; }
 }
 
-html[data-style="pastel-rainbow-goth"] .section-title::before {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .section-title::before {
     content: '✿';
     -webkit-text-fill-color: #ff9de2;
     background: none;
     margin-right: 10px;
 }
 
-html[data-style="pastel-rainbow-goth"] .section-title::after {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .section-title::after {
     content: '✿';
     -webkit-text-fill-color: #b8f0ff;
     background: none;
@@ -89,9 +89,9 @@ html[data-style="pastel-rainbow-goth"] .section-title::after {
     margin-left: 10px;
 }
 
-html[data-style="pastel-rainbow-goth"] .section-header { border-bottom: none; }
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .section-header { border-bottom: none; }
 
-html[data-style="pastel-rainbow-goth"] .section-header::after {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .section-header::after {
     content: '';
     display: block;
     height: 2px;
@@ -103,7 +103,7 @@ html[data-style="pastel-rainbow-goth"] .section-header::after {
 }
 
 /* Cards — soft dark with pastel accents */
-html[data-style="pastel-rainbow-goth"] .article-card {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .article-card {
     border: 1px solid #2a1e38;
     border-radius: 12px;
     background: linear-gradient(180deg, #160e20 0%, #0d0a14 100%);
@@ -111,32 +111,32 @@ html[data-style="pastel-rainbow-goth"] .article-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-html[data-style="pastel-rainbow-goth"] .article-card:nth-child(1) { border-top: 3px solid #ff9de2; }
-html[data-style="pastel-rainbow-goth"] .article-card:nth-child(2) { border-top: 3px solid #b8f0ff; }
-html[data-style="pastel-rainbow-goth"] .article-card:nth-child(3) { border-top: 3px solid #c8f0a0; }
-html[data-style="pastel-rainbow-goth"] .article-card:nth-child(4) { border-top: 3px solid #ffd0a0; }
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .article-card:nth-child(1) { border-top: 3px solid #ff9de2; }
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .article-card:nth-child(2) { border-top: 3px solid #b8f0ff; }
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .article-card:nth-child(3) { border-top: 3px solid #c8f0a0; }
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .article-card:nth-child(4) { border-top: 3px solid #ffd0a0; }
 
-html[data-style="pastel-rainbow-goth"] .article-card:hover {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .article-card:hover {
     transform: translateY(-6px) scale(1.01);
     box-shadow: 0 12px 40px rgba(255,157,226,0.25), 0 0 0 1px rgba(255,157,226,0.2);
 }
 
-html[data-style="pastel-rainbow-goth"] .card-thumbnail img {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .card-thumbnail img {
     filter: saturate(0.8) brightness(0.9);
     transition: filter 0.3s ease;
 }
 
-html[data-style="pastel-rainbow-goth"] .article-card:hover .card-thumbnail img {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .article-card:hover .card-thumbnail img {
     filter: saturate(1.1) brightness(1);
 }
 
 /* Hero */
-html[data-style="pastel-rainbow-goth"] .hero-content {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .hero-content {
     background: linear-gradient(135deg, #160e20, #0d0a14);
     border-left: 4px solid #ff9de2;
 }
 
-html[data-style="pastel-rainbow-goth"] .hero-title {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .hero-title {
     font-family: 'Abril Fatface', serif;
     background: linear-gradient(135deg, #ff9de2, #b8f0ff);
     -webkit-background-clip: text;
@@ -146,7 +146,7 @@ html[data-style="pastel-rainbow-goth"] .hero-title {
 }
 
 /* Site title — kawaii-goth */
-html[data-style="pastel-rainbow-goth"] .site-title {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .site-title {
     font-family: 'Abril Fatface', serif;
     background: linear-gradient(135deg, #ff9de2, #b8f0ff, #c8f0a0);
     -webkit-background-clip: text;
@@ -156,12 +156,12 @@ html[data-style="pastel-rainbow-goth"] .site-title {
 }
 
 /* Navigation */
-html[data-style="pastel-rainbow-goth"] .main-navigation {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .main-navigation {
     background: linear-gradient(180deg, #0a0810, #0d0a14);
     border-bottom: 1px solid #2a1e38;
 }
 
-html[data-style="pastel-rainbow-goth"] .nav-menu a {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .nav-menu a {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 2px;
@@ -170,14 +170,14 @@ html[data-style="pastel-rainbow-goth"] .nav-menu a {
     font-weight: 700;
 }
 
-html[data-style="pastel-rainbow-goth"] .nav-menu a:hover,
-html[data-style="pastel-rainbow-goth"] .nav-menu .current-menu-item > a {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .nav-menu a:hover,
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .nav-menu .current-menu-item > a {
     background: linear-gradient(135deg, #c060e0, #ff9de2);
     color: #ffffff;
 }
 
 /* Tags — pastel pills */
-html[data-style="pastel-rainbow-goth"] .tag {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .tag {
     background: linear-gradient(135deg, #3d1a5a, #5a1a6a);
     border: 1px solid rgba(255,157,226,0.4);
     color: #ff9de2;
@@ -188,14 +188,14 @@ html[data-style="pastel-rainbow-goth"] .tag {
     padding: 3px 12px;
 }
 
-html[data-style="pastel-rainbow-goth"] .tag:hover {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .tag:hover {
     background: linear-gradient(135deg, #ff9de2, #b8f0ff);
     color: #0d0a14;
     border-color: transparent;
 }
 
 /* Widget titles */
-html[data-style="pastel-rainbow-goth"] .widget-title {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .widget-title {
     background: linear-gradient(135deg, #c060e0, #ff9de2);
     font-family: 'Josefin Sans', sans-serif;
     letter-spacing: 3px;
@@ -203,12 +203,12 @@ html[data-style="pastel-rainbow-goth"] .widget-title {
 }
 
 /* Footer */
-html[data-style="pastel-rainbow-goth"] .site-footer {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .site-footer {
     background: linear-gradient(0deg, #080610, #0d0a14);
     border-top: none;
 }
 
-html[data-style="pastel-rainbow-goth"] .site-footer::before {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .site-footer::before {
     content: '';
     display: block;
     height: 3px;
@@ -218,7 +218,7 @@ html[data-style="pastel-rainbow-goth"] .site-footer::before {
 }
 
 /* Blockquote */
-html[data-style="pastel-rainbow-goth"] .single-post-content blockquote {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .single-post-content blockquote {
     border-left: 4px solid #ff9de2;
     background: linear-gradient(135deg, #160e20, #0d0a14);
     border-radius: 0 12px 12px 0;
@@ -226,7 +226,7 @@ html[data-style="pastel-rainbow-goth"] .single-post-content blockquote {
 }
 
 /* Buttons */
-html[data-style="pastel-rainbow-goth"] .btn {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .btn {
     background: linear-gradient(135deg, #c060e0, #ff9de2);
     border: none;
     font-family: 'Josefin Sans', sans-serif;
@@ -236,32 +236,32 @@ html[data-style="pastel-rainbow-goth"] .btn {
     box-shadow: 0 4px 16px rgba(192,96,224,0.4);
 }
 
-html[data-style="pastel-rainbow-goth"] .btn:hover {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .btn:hover {
     background: linear-gradient(135deg, #e080ff, #ffb8ec);
     box-shadow: 0 6px 24px rgba(192,96,224,0.6);
     transform: translateY(-2px);
 }
 
 /* Breaking news — rainbow */
-html[data-style="pastel-rainbow-goth"] .breaking-news-bar {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .breaking-news-bar {
     background: linear-gradient(90deg, #ff9de2, #b8f0ff, #c8f0a0, #ffd0a0, #ff9de2);
     background-size: 200% auto;
     animation: rainbowShift 4s linear infinite;
     color: #0d0a14;
 }
 
-html[data-style="pastel-rainbow-goth"] .breaking-news-bar .breaking-label {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .breaking-news-bar .breaking-label {
     background: rgba(0,0,0,0.3);
     color: #0d0a14;
 }
 
-html[data-style="pastel-rainbow-goth"] .breaking-ticker a {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .breaking-ticker a {
     color: #0d0a14;
     font-weight: 700;
 }
 
 /* Read more */
-html[data-style="pastel-rainbow-goth"] .read-more {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .read-more {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 0.75rem;
     letter-spacing: 2px;
@@ -273,26 +273,26 @@ html[data-style="pastel-rainbow-goth"] .read-more {
 }
 
 /* List items */
-html[data-style="pastel-rainbow-goth"] .article-list-item {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .article-list-item {
     border-radius: 12px;
     border: 1px solid #2a1e38;
 }
 
-html[data-style="pastel-rainbow-goth"] .article-list-item:hover {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .article-list-item:hover {
     border-color: rgba(255,157,226,0.4);
 }
 
 /* Input fields */
-html[data-style="pastel-rainbow-goth"] input[type="email"],
-html[data-style="pastel-rainbow-goth"] input[type="search"],
-html[data-style="pastel-rainbow-goth"] input[type="text"],
-html[data-style="pastel-rainbow-goth"] textarea { border-radius: 24px; }
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth input[type="email"],
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth input[type="search"],
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth input[type="text"],
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth textarea { border-radius: 24px; }
 
 /* Pagination */
-html[data-style="pastel-rainbow-goth"] .page-numbers { border-radius: 50%; }
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .page-numbers { border-radius: 50%; }
 
-html[data-style="pastel-rainbow-goth"] .page-numbers:hover,
-html[data-style="pastel-rainbow-goth"] .page-numbers.current {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .page-numbers:hover,
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .page-numbers.current {
     background: linear-gradient(135deg, #c060e0, #ff9de2);
     border-color: transparent;
 }

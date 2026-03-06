@@ -3,13 +3,13 @@
  * Dark academia, deep purples & blacks, ornate Victorian borders,
  * gothic serif typography, crimson accents, candlelit atmosphere
  *
- * FIX: All variables scoped to html[data-style="goth"] to override
+ * FIX: All variables scoped to body[data-style="goth"], body.style-goth to override
  * the :root defaults in style.css regardless of load order.
  */
 
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
-html[data-style="goth"] {
+body[data-style="goth"], body.style-goth {
     --color-bg: #080810;
     --color-bg-secondary: #0f0f1a;
     --color-bg-card: #0d0d18;
@@ -40,7 +40,7 @@ html[data-style="goth"] {
 }
 
 /* Gothic background texture */
-html[data-style="goth"] body {
+body[data-style="goth"], body.style-goth body {
     background-image:
         radial-gradient(ellipse at top, #0f0a1a 0%, #080810 60%),
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z' fill='none' stroke='%23ffffff' stroke-width='0.3' opacity='0.03'/%3E%3C/svg%3E");
@@ -48,7 +48,7 @@ html[data-style="goth"] body {
 }
 
 /* Ornate section titles with decorative elements */
-html[data-style="goth"] .section-title {
+body[data-style="goth"], body.style-goth .section-title {
     font-family: 'Cinzel', serif;
     font-weight: 700;
     letter-spacing: 4px;
@@ -59,14 +59,14 @@ html[data-style="goth"] .section-title {
     padding: 0 24px;
 }
 
-html[data-style="goth"] .section-title::before {
+body[data-style="goth"], body.style-goth .section-title::before {
     content: '✦';
     color: #8b1a4a;
     margin-right: 16px;
     font-size: 0.8em;
 }
 
-html[data-style="goth"] .section-title::after {
+body[data-style="goth"], body.style-goth .section-title::after {
     content: '✦';
     color: #8b1a4a;
     margin-left: 16px;
@@ -77,13 +77,13 @@ html[data-style="goth"] .section-title::after {
     height: auto;
 }
 
-html[data-style="goth"] .section-header {
+body[data-style="goth"], body.style-goth .section-header {
     border-bottom: none;
     position: relative;
     padding-bottom: 16px;
 }
 
-html[data-style="goth"] .section-header::after {
+body[data-style="goth"], body.style-goth .section-header::after {
     content: '';
     display: block;
     height: 1px;
@@ -92,14 +92,14 @@ html[data-style="goth"] .section-header::after {
 }
 
 /* Ornate card borders */
-html[data-style="goth"] .article-card {
+body[data-style="goth"], body.style-goth .article-card {
     border: 1px solid #1e1a2e;
     border-top: 2px solid #4a0e6b;
     background: linear-gradient(180deg, #0d0d18 0%, #080810 100%);
     position: relative;
 }
 
-html[data-style="goth"] .article-card::before {
+body[data-style="goth"], body.style-goth .article-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -109,19 +109,19 @@ html[data-style="goth"] .article-card::before {
     background: linear-gradient(90deg, transparent, #8b1a4a, transparent);
 }
 
-html[data-style="goth"] .article-card:hover {
+body[data-style="goth"], body.style-goth .article-card:hover {
     box-shadow: 0 8px 32px rgba(139,26,74,0.4), 0 0 0 1px rgba(139,26,74,0.3);
     transform: translateY(-4px);
 }
 
 /* Gothic hero */
-html[data-style="goth"] .hero-content {
+body[data-style="goth"], body.style-goth .hero-content {
     background: linear-gradient(135deg, #0f0a1a, #080810);
     border-left: 3px solid #8b1a4a;
     position: relative;
 }
 
-html[data-style="goth"] .hero-content::before {
+body[data-style="goth"], body.style-goth .hero-content::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -129,7 +129,7 @@ html[data-style="goth"] .hero-content::before {
     pointer-events: none;
 }
 
-html[data-style="goth"] .hero-title {
+body[data-style="goth"], body.style-goth .hero-title {
     font-family: 'Cinzel', serif;
     font-weight: 900;
     letter-spacing: 2px;
@@ -138,7 +138,7 @@ html[data-style="goth"] .hero-title {
 }
 
 /* Site title — Fraktur/Gothic feel */
-html[data-style="goth"] .site-title {
+body[data-style="goth"], body.style-goth .site-title {
     font-family: 'Cinzel', serif;
     font-weight: 900;
     letter-spacing: 3px;
@@ -147,12 +147,12 @@ html[data-style="goth"] .site-title {
 }
 
 /* Navigation — dark and elegant */
-html[data-style="goth"] .main-navigation {
+body[data-style="goth"], body.style-goth .main-navigation {
     background: linear-gradient(180deg, #0a0a14, #080810);
     border-bottom: 1px solid #1e1a2e;
 }
 
-html[data-style="goth"] .nav-menu a {
+body[data-style="goth"], body.style-goth .nav-menu a {
     font-family: 'Cinzel', serif;
     font-size: 0.75rem;
     letter-spacing: 2px;
@@ -160,14 +160,14 @@ html[data-style="goth"] .nav-menu a {
     text-transform: uppercase;
 }
 
-html[data-style="goth"] .nav-menu a:hover,
-html[data-style="goth"] .nav-menu .current-menu-item > a {
+body[data-style="goth"], body.style-goth .nav-menu a:hover,
+body[data-style="goth"], body.style-goth .nav-menu .current-menu-item > a {
     background: linear-gradient(180deg, #4a0e6b, #8b1a4a);
     color: #f0e8ff;
 }
 
 /* Tags — purple jewel-like */
-html[data-style="goth"] .tag {
+body[data-style="goth"], body.style-goth .tag {
     background: linear-gradient(135deg, #4a0e6b, #8b1a4a);
     border-radius: 2px;
     font-family: 'Cinzel', serif;
@@ -177,7 +177,7 @@ html[data-style="goth"] .tag {
 }
 
 /* Widget titles — ornate */
-html[data-style="goth"] .widget-title {
+body[data-style="goth"], body.style-goth .widget-title {
     background: linear-gradient(135deg, #4a0e6b, #8b1a4a);
     font-family: 'Cinzel', serif;
     letter-spacing: 3px;
@@ -186,13 +186,13 @@ html[data-style="goth"] .widget-title {
 }
 
 /* Footer */
-html[data-style="goth"] .site-footer {
+body[data-style="goth"], body.style-goth .site-footer {
     border-top: 1px solid #1e1a2e;
     background: linear-gradient(0deg, #050508, #080810);
     position: relative;
 }
 
-html[data-style="goth"] .site-footer::before {
+body[data-style="goth"], body.style-goth .site-footer::before {
     content: '';
     display: block;
     height: 2px;
@@ -205,7 +205,7 @@ html[data-style="goth"] .site-footer::before {
 }
 
 /* Blockquote — gothic manuscript style */
-html[data-style="goth"] .single-post-content blockquote {
+body[data-style="goth"], body.style-goth .single-post-content blockquote {
     border-left: 4px solid #8b1a4a;
     background: linear-gradient(135deg, #0f0a1a, #0d0d18);
     font-style: italic;
@@ -215,7 +215,7 @@ html[data-style="goth"] .single-post-content blockquote {
     position: relative;
 }
 
-html[data-style="goth"] .single-post-content blockquote::before {
+body[data-style="goth"], body.style-goth .single-post-content blockquote::before {
     content: '\201C';
     font-size: 4rem;
     color: #8b1a4a;
@@ -227,7 +227,7 @@ html[data-style="goth"] .single-post-content blockquote::before {
 }
 
 /* Buttons */
-html[data-style="goth"] .btn {
+body[data-style="goth"], body.style-goth .btn {
     background: linear-gradient(135deg, #8b1a4a, #4a0e6b);
     border: 1px solid rgba(200,184,232,0.2);
     font-family: 'Cinzel', serif;
@@ -236,18 +236,18 @@ html[data-style="goth"] .btn {
     box-shadow: 0 2px 8px rgba(139,26,74,0.4);
 }
 
-html[data-style="goth"] .btn:hover {
+body[data-style="goth"], body.style-goth .btn:hover {
     background: linear-gradient(135deg, #c02060, #6b1a9a);
     box-shadow: 0 4px 16px rgba(139,26,74,0.6);
 }
 
 /* Breaking news */
-html[data-style="goth"] .breaking-news-bar {
+body[data-style="goth"], body.style-goth .breaking-news-bar {
     background: linear-gradient(90deg, #4a0e6b, #8b1a4a, #4a0e6b);
 }
 
 /* Read more */
-html[data-style="goth"] .read-more {
+body[data-style="goth"], body.style-goth .read-more {
     font-family: 'Cinzel', serif;
     font-size: 0.75rem;
     letter-spacing: 2px;
@@ -255,20 +255,20 @@ html[data-style="goth"] .read-more {
 }
 
 /* Scrollbar styling */
-html[data-style="goth"] ::-webkit-scrollbar { width: 8px; }
-html[data-style="goth"] ::-webkit-scrollbar-track { background: #080810; }
-html[data-style="goth"] ::-webkit-scrollbar-thumb { background: #4a0e6b; border-radius: 4px; }
-html[data-style="goth"] ::-webkit-scrollbar-thumb:hover { background: #8b1a4a; }
+body[data-style="goth"], body.style-goth ::-webkit-scrollbar { width: 8px; }
+body[data-style="goth"], body.style-goth ::-webkit-scrollbar-track { background: #080810; }
+body[data-style="goth"], body.style-goth ::-webkit-scrollbar-thumb { background: #4a0e6b; border-radius: 4px; }
+body[data-style="goth"], body.style-goth ::-webkit-scrollbar-thumb:hover { background: #8b1a4a; }
 
 /* Glow effect on hover for links */
-html[data-style="goth"] a:hover { text-shadow: 0 0 8px rgba(139,26,74,0.6); }
+body[data-style="goth"], body.style-goth a:hover { text-shadow: 0 0 8px rgba(139,26,74,0.6); }
 
 /* Post meta separator */
-html[data-style="goth"] .card-meta .separator,
-html[data-style="goth"] .single-post-meta .separator { color: #8b1a4a; }
+body[data-style="goth"], body.style-goth .card-meta .separator,
+body[data-style="goth"], body.style-goth .single-post-meta .separator { color: #8b1a4a; }
 
 /* Ornate horizontal rules */
-html[data-style="goth"] hr {
+body[data-style="goth"], body.style-goth hr {
     border: none;
     text-align: center;
     overflow: visible;
@@ -276,7 +276,7 @@ html[data-style="goth"] hr {
     color: #4a0e6b;
 }
 
-html[data-style="goth"] hr::before {
+body[data-style="goth"], body.style-goth hr::before {
     content: '⸻ ✦ ⸻';
     font-size: 1rem;
     color: #8b1a4a;

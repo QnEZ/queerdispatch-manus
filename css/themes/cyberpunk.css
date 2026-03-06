@@ -3,11 +3,11 @@
  * Neon pink & cyan on near-black, glitch effects, tech noir,
  * terminal aesthetics, digital resistance, queer futurity
  *
- * FIX: All variables scoped to html[data-style="cyberpunk"] to override
+ * FIX: All variables scoped to body[data-style="cyberpunk"], body.style-cyberpunk to override
  * the :root defaults in style.css regardless of load order.
  */
 
-html[data-style="cyberpunk"] {
+body[data-style="cyberpunk"], body.style-cyberpunk {
     --color-bg: #050510;
     --color-bg-secondary: #0a0820;
     --color-bg-card: #080618;
@@ -38,7 +38,7 @@ html[data-style="cyberpunk"] {
 }
 
 /* Scanline effect */
-html[data-style="cyberpunk"] body::before {
+body[data-style="cyberpunk"], body.style-cyberpunk body::before {
     content: '';
     position: fixed;
     inset: 0;
@@ -54,7 +54,7 @@ html[data-style="cyberpunk"] body::before {
 }
 
 /* Grid background */
-html[data-style="cyberpunk"] body {
+body[data-style="cyberpunk"], body.style-cyberpunk body {
     background-color: #050510;
     background-image:
         linear-gradient(rgba(0,255,255,0.03) 1px, transparent 1px),
@@ -66,7 +66,7 @@ html[data-style="cyberpunk"] body {
 }
 
 /* Neon glow section titles */
-html[data-style="cyberpunk"] .section-title {
+body[data-style="cyberpunk"], body.style-cyberpunk .section-title {
     font-family: 'Orbitron', monospace;
     color: #00ffff;
     letter-spacing: 4px;
@@ -76,7 +76,7 @@ html[data-style="cyberpunk"] .section-title {
     position: relative;
 }
 
-html[data-style="cyberpunk"] .section-title::before {
+body[data-style="cyberpunk"], body.style-cyberpunk .section-title::before {
     content: '> ';
     color: #ff00ff;
     background: none;
@@ -86,7 +86,7 @@ html[data-style="cyberpunk"] .section-title::before {
     text-shadow: 0 0 10px rgba(255,0,255,0.8);
 }
 
-html[data-style="cyberpunk"] .section-title::after {
+body[data-style="cyberpunk"], body.style-cyberpunk .section-title::after {
     content: '';
     display: block;
     height: 1px;
@@ -95,10 +95,10 @@ html[data-style="cyberpunk"] .section-title::after {
     box-shadow: 0 0 8px rgba(0,255,255,0.5);
 }
 
-html[data-style="cyberpunk"] .section-header { border-bottom: none; }
+body[data-style="cyberpunk"], body.style-cyberpunk .section-header { border-bottom: none; }
 
 /* Cards — terminal windows */
-html[data-style="cyberpunk"] .article-card {
+body[data-style="cyberpunk"], body.style-cyberpunk .article-card {
     border: 1px solid rgba(0,255,255,0.2);
     border-top: 2px solid #ff00ff;
     background: linear-gradient(180deg, #0a0820 0%, #050510 100%);
@@ -106,7 +106,7 @@ html[data-style="cyberpunk"] .article-card {
     overflow: hidden;
 }
 
-html[data-style="cyberpunk"] .article-card::before {
+body[data-style="cyberpunk"], body.style-cyberpunk .article-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -117,7 +117,7 @@ html[data-style="cyberpunk"] .article-card::before {
     box-shadow: 0 0 8px rgba(255,0,255,0.6);
 }
 
-html[data-style="cyberpunk"] .article-card::after {
+body[data-style="cyberpunk"], body.style-cyberpunk .article-card::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -125,14 +125,14 @@ html[data-style="cyberpunk"] .article-card::after {
     pointer-events: none;
 }
 
-html[data-style="cyberpunk"] .article-card:hover {
+body[data-style="cyberpunk"], body.style-cyberpunk .article-card:hover {
     border-color: rgba(255,0,255,0.5);
     box-shadow: 0 0 30px rgba(255,0,255,0.3), 0 0 60px rgba(0,255,255,0.15), inset 0 0 30px rgba(255,0,255,0.05);
     transform: translateY(-3px);
 }
 
 /* Glitch effect on card hover */
-html[data-style="cyberpunk"] .article-card:hover .card-title {
+body[data-style="cyberpunk"], body.style-cyberpunk .article-card:hover .card-title {
     animation: glitch 0.3s ease;
 }
 
@@ -146,13 +146,13 @@ html[data-style="cyberpunk"] .article-card:hover .card-title {
 }
 
 /* Hero */
-html[data-style="cyberpunk"] .hero-content {
+body[data-style="cyberpunk"], body.style-cyberpunk .hero-content {
     background: linear-gradient(135deg, #0a0820, #050510);
     border-left: 3px solid #ff00ff;
     box-shadow: inset 0 0 40px rgba(255,0,255,0.05);
 }
 
-html[data-style="cyberpunk"] .hero-title {
+body[data-style="cyberpunk"], body.style-cyberpunk .hero-title {
     font-family: 'Orbitron', monospace;
     color: #e0f8ff;
     text-shadow: 0 0 20px rgba(0,255,255,0.5), 0 0 40px rgba(0,255,255,0.2);
@@ -161,7 +161,7 @@ html[data-style="cyberpunk"] .hero-title {
 }
 
 /* Site title */
-html[data-style="cyberpunk"] .site-title {
+body[data-style="cyberpunk"], body.style-cyberpunk .site-title {
     font-family: 'Orbitron', monospace;
     color: #e0f8ff;
     letter-spacing: 4px;
@@ -170,7 +170,7 @@ html[data-style="cyberpunk"] .site-title {
 }
 
 /* Cursor blink on site title */
-html[data-style="cyberpunk"] .site-title::after {
+body[data-style="cyberpunk"], body.style-cyberpunk .site-title::after {
     content: '_';
     animation: blink 1s step-end infinite;
     color: #ff00ff;
@@ -182,12 +182,12 @@ html[data-style="cyberpunk"] .site-title::after {
 }
 
 /* Navigation */
-html[data-style="cyberpunk"] .main-navigation {
+body[data-style="cyberpunk"], body.style-cyberpunk .main-navigation {
     background: linear-gradient(180deg, #030310, #050510);
     border-bottom: 1px solid rgba(0,255,255,0.2);
 }
 
-html[data-style="cyberpunk"] .nav-menu a {
+body[data-style="cyberpunk"], body.style-cyberpunk .nav-menu a {
     font-family: 'Orbitron', monospace;
     font-size: 0.65rem;
     letter-spacing: 2px;
@@ -196,8 +196,8 @@ html[data-style="cyberpunk"] .nav-menu a {
     text-shadow: 0 0 6px rgba(0,255,255,0.4);
 }
 
-html[data-style="cyberpunk"] .nav-menu a:hover,
-html[data-style="cyberpunk"] .nav-menu .current-menu-item > a {
+body[data-style="cyberpunk"], body.style-cyberpunk .nav-menu a:hover,
+body[data-style="cyberpunk"], body.style-cyberpunk .nav-menu .current-menu-item > a {
     background: linear-gradient(135deg, rgba(255,0,255,0.3), rgba(0,255,255,0.2));
     color: #ffffff;
     text-shadow: 0 0 10px rgba(255,0,255,0.8);
@@ -205,7 +205,7 @@ html[data-style="cyberpunk"] .nav-menu .current-menu-item > a {
 }
 
 /* Tags */
-html[data-style="cyberpunk"] .tag {
+body[data-style="cyberpunk"], body.style-cyberpunk .tag {
     background: transparent;
     border: 1px solid #00ffff;
     color: #00ffff;
@@ -217,14 +217,14 @@ html[data-style="cyberpunk"] .tag {
     box-shadow: 0 0 6px rgba(0,255,255,0.2);
 }
 
-html[data-style="cyberpunk"] .tag:hover {
+body[data-style="cyberpunk"], body.style-cyberpunk .tag:hover {
     background: rgba(0,255,255,0.1);
     color: #00ffff;
     box-shadow: 0 0 12px rgba(0,255,255,0.4);
 }
 
 /* Widget titles */
-html[data-style="cyberpunk"] .widget-title {
+body[data-style="cyberpunk"], body.style-cyberpunk .widget-title {
     background: linear-gradient(135deg, rgba(255,0,255,0.3), rgba(0,255,255,0.2));
     font-family: 'Orbitron', monospace;
     letter-spacing: 3px;
@@ -235,12 +235,12 @@ html[data-style="cyberpunk"] .widget-title {
 }
 
 /* Footer */
-html[data-style="cyberpunk"] .site-footer {
+body[data-style="cyberpunk"], body.style-cyberpunk .site-footer {
     background: linear-gradient(0deg, #020208, #050510);
     border-top: 1px solid rgba(255,0,255,0.3);
 }
 
-html[data-style="cyberpunk"] .site-footer::before {
+body[data-style="cyberpunk"], body.style-cyberpunk .site-footer::before {
     content: '';
     display: block;
     height: 2px;
@@ -253,7 +253,7 @@ html[data-style="cyberpunk"] .site-footer::before {
 }
 
 /* Blockquote — terminal output */
-html[data-style="cyberpunk"] .single-post-content blockquote {
+body[data-style="cyberpunk"], body.style-cyberpunk .single-post-content blockquote {
     border-left: 4px solid #00ffff;
     background: rgba(0,255,255,0.05);
     font-family: 'Courier Prime', monospace;
@@ -261,14 +261,14 @@ html[data-style="cyberpunk"] .single-post-content blockquote {
     box-shadow: 0 0 16px rgba(0,255,255,0.1);
 }
 
-html[data-style="cyberpunk"] .single-post-content blockquote::before {
+body[data-style="cyberpunk"], body.style-cyberpunk .single-post-content blockquote::before {
     content: '$ ';
     color: #ff00ff;
     font-weight: bold;
 }
 
 /* Buttons */
-html[data-style="cyberpunk"] .btn {
+body[data-style="cyberpunk"], body.style-cyberpunk .btn {
     background: transparent;
     border: 2px solid #ff00ff;
     color: #ff00ff;
@@ -280,7 +280,7 @@ html[data-style="cyberpunk"] .btn {
     transition: all 0.2s ease;
 }
 
-html[data-style="cyberpunk"] .btn:hover {
+body[data-style="cyberpunk"], body.style-cyberpunk .btn:hover {
     background: rgba(255,0,255,0.15);
     color: #ffffff;
     box-shadow: 0 0 24px rgba(255,0,255,0.6), inset 0 0 24px rgba(255,0,255,0.1);
@@ -288,7 +288,7 @@ html[data-style="cyberpunk"] .btn:hover {
 }
 
 /* Breaking news */
-html[data-style="cyberpunk"] .breaking-news-bar {
+body[data-style="cyberpunk"], body.style-cyberpunk .breaking-news-bar {
     background: linear-gradient(90deg, #ff00ff, #0a0820, #00ffff);
     background-size: 200% auto;
     animation: cyberpunkGradient 4s linear infinite;
@@ -301,7 +301,7 @@ html[data-style="cyberpunk"] .breaking-news-bar {
 }
 
 /* Read more */
-html[data-style="cyberpunk"] .read-more {
+body[data-style="cyberpunk"], body.style-cyberpunk .read-more {
     font-family: 'Orbitron', monospace;
     font-size: 0.65rem;
     letter-spacing: 2px;
@@ -309,33 +309,33 @@ html[data-style="cyberpunk"] .read-more {
     text-shadow: 0 0 6px rgba(0,255,255,0.6);
 }
 
-html[data-style="cyberpunk"] .read-more::before { content: '>> '; }
+body[data-style="cyberpunk"], body.style-cyberpunk .read-more::before { content: '>> '; }
 
 /* Scrollbar */
-html[data-style="cyberpunk"] ::-webkit-scrollbar { width: 6px; }
-html[data-style="cyberpunk"] ::-webkit-scrollbar-track { background: #050510; }
-html[data-style="cyberpunk"] ::-webkit-scrollbar-thumb {
+body[data-style="cyberpunk"], body.style-cyberpunk ::-webkit-scrollbar { width: 6px; }
+body[data-style="cyberpunk"], body.style-cyberpunk ::-webkit-scrollbar-track { background: #050510; }
+body[data-style="cyberpunk"], body.style-cyberpunk ::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, #ff00ff, #00ffff);
     box-shadow: 0 0 6px rgba(255,0,255,0.5);
 }
 
 /* Neon glow on hover links */
-html[data-style="cyberpunk"] a:hover { text-shadow: 0 0 8px rgba(0,255,255,0.6); }
+body[data-style="cyberpunk"], body.style-cyberpunk a:hover { text-shadow: 0 0 8px rgba(0,255,255,0.6); }
 
 /* Input fields */
-html[data-style="cyberpunk"] input[type="email"]:focus,
-html[data-style="cyberpunk"] input[type="search"]:focus {
+body[data-style="cyberpunk"], body.style-cyberpunk input[type="email"]:focus,
+body[data-style="cyberpunk"], body.style-cyberpunk input[type="search"]:focus {
     border-color: #00ffff;
     box-shadow: 0 0 8px rgba(0,255,255,0.4);
 }
 
 /* Neon border on list items */
-html[data-style="cyberpunk"] .article-list-item {
+body[data-style="cyberpunk"], body.style-cyberpunk .article-list-item {
     border: 1px solid rgba(0,255,255,0.15);
     border-left: 3px solid #ff00ff;
 }
 
-html[data-style="cyberpunk"] .article-list-item:hover {
+body[data-style="cyberpunk"], body.style-cyberpunk .article-list-item:hover {
     border-color: rgba(255,0,255,0.4);
     box-shadow: 0 0 20px rgba(255,0,255,0.2);
 }

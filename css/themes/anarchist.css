@@ -2,11 +2,11 @@
  * QueerDispatch — Anarchist Style
  * Black & red, DIY punk zine, distressed textures, raw energy
  *
- * FIX: All variables scoped to html[data-style="anarchist"] to override
+ * FIX: All variables scoped to body[data-style="anarchist"], body.style-anarchist to override
  * the :root defaults in style.css regardless of load order.
  */
 
-html[data-style="anarchist"] {
+body[data-style="anarchist"], body.style-anarchist {
     --color-bg: #0d0d0d;
     --color-bg-secondary: #1a1a1a;
     --color-bg-card: #111111;
@@ -37,7 +37,7 @@ html[data-style="anarchist"] {
 }
 
 /* Distressed texture overlay on body */
-html[data-style="anarchist"] body::before {
+body[data-style="anarchist"], body.style-anarchist body::before {
     content: '';
     position: fixed;
     inset: 0;
@@ -54,13 +54,13 @@ html[data-style="anarchist"] body::before {
 }
 
 /* Spray-paint style section titles */
-html[data-style="anarchist"] .section-title {
+body[data-style="anarchist"], body.style-anarchist .section-title {
     text-transform: uppercase;
     letter-spacing: 3px;
     position: relative;
 }
 
-html[data-style="anarchist"] .section-title::after {
+body[data-style="anarchist"], body.style-anarchist .section-title::after {
     content: '';
     display: block;
     height: 3px;
@@ -75,12 +75,12 @@ html[data-style="anarchist"] .section-title::after {
 }
 
 /* Torn-edge card effect */
-html[data-style="anarchist"] .article-card {
+body[data-style="anarchist"], body.style-anarchist .article-card {
     border-left: 4px solid #cc0000;
     position: relative;
 }
 
-html[data-style="anarchist"] .article-card::after {
+body[data-style="anarchist"], body.style-anarchist .article-card::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -97,33 +97,33 @@ html[data-style="anarchist"] .article-card::after {
 }
 
 /* Hero — bold propaganda poster feel */
-html[data-style="anarchist"] .hero-content {
+body[data-style="anarchist"], body.style-anarchist .hero-content {
     border-left: 6px solid #cc0000;
     background: #1a0000;
 }
 
-html[data-style="anarchist"] .hero-title {
+body[data-style="anarchist"], body.style-anarchist .hero-title {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 3px 3px 0px rgba(204,0,0,0.4);
 }
 
 /* Navigation — stencil style */
-html[data-style="anarchist"] .nav-menu a {
+body[data-style="anarchist"], body.style-anarchist .nav-menu a {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.8rem;
     border-right: 1px solid #2a0000;
 }
 
-html[data-style="anarchist"] .nav-menu a:hover,
-html[data-style="anarchist"] .nav-menu .current-menu-item > a {
+body[data-style="anarchist"], body.style-anarchist .nav-menu a:hover,
+body[data-style="anarchist"], body.style-anarchist .nav-menu .current-menu-item > a {
     background-color: #cc0000;
     color: #ffffff;
 }
 
 /* Site title — bold impact */
-html[data-style="anarchist"] .site-title {
+body[data-style="anarchist"], body.style-anarchist .site-title {
     font-size: 2rem;
     letter-spacing: 4px;
     color: #ffffff;
@@ -131,7 +131,7 @@ html[data-style="anarchist"] .site-title {
 }
 
 /* Breaking news bar */
-html[data-style="anarchist"] .breaking-news-bar {
+body[data-style="anarchist"], body.style-anarchist .breaking-news-bar {
     background: repeating-linear-gradient(
         45deg,
         #cc0000,
@@ -142,7 +142,7 @@ html[data-style="anarchist"] .breaking-news-bar {
 }
 
 /* Widget titles */
-html[data-style="anarchist"] .widget-title {
+body[data-style="anarchist"], body.style-anarchist .widget-title {
     background: #cc0000;
     font-family: 'Anton', 'Impact', sans-serif;
     letter-spacing: 3px;
@@ -150,12 +150,12 @@ html[data-style="anarchist"] .widget-title {
 }
 
 /* Footer */
-html[data-style="anarchist"] .site-footer {
+body[data-style="anarchist"], body.style-anarchist .site-footer {
     border-top: 4px solid #cc0000;
 }
 
 /* Blockquote — manifesto style */
-html[data-style="anarchist"] .single-post-content blockquote {
+body[data-style="anarchist"], body.style-anarchist .single-post-content blockquote {
     border-left: 6px solid #cc0000;
     background: #1a0000;
     font-style: normal;
@@ -166,21 +166,21 @@ html[data-style="anarchist"] .single-post-content blockquote {
 }
 
 /* Tags */
-html[data-style="anarchist"] .tag {
+body[data-style="anarchist"], body.style-anarchist .tag {
     border-radius: 0;
     font-family: 'Anton', 'Impact', sans-serif;
     letter-spacing: 1px;
 }
 
 /* Read more links */
-html[data-style="anarchist"] .read-more {
+body[data-style="anarchist"], body.style-anarchist .read-more {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-family: 'Anton', 'Impact', sans-serif;
 }
 
 /* Buttons */
-html[data-style="anarchist"] .btn {
+body[data-style="anarchist"], body.style-anarchist .btn {
     border-radius: 0;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -188,13 +188,13 @@ html[data-style="anarchist"] .btn {
     border: 2px solid #cc0000;
 }
 
-html[data-style="anarchist"] .btn:hover {
+body[data-style="anarchist"], body.style-anarchist .btn:hover {
     background: transparent;
     color: #cc0000;
 }
 
 /* Style switcher panel */
-html[data-style="anarchist"] .style-switcher-toggle {
+body[data-style="anarchist"], body.style-anarchist .style-switcher-toggle {
     background: #cc0000;
     border-radius: 0;
     font-family: 'Anton', 'Impact', sans-serif;
@@ -202,21 +202,21 @@ html[data-style="anarchist"] .style-switcher-toggle {
 }
 
 /* Horizontal rule */
-html[data-style="anarchist"] hr {
+body[data-style="anarchist"], body.style-anarchist hr {
     border: none;
     border-top: 2px solid #cc0000;
     margin: 32px 0;
 }
 
 /* Links in content */
-html[data-style="anarchist"] .single-post-content a {
+body[data-style="anarchist"], body.style-anarchist .single-post-content a {
     color: #ff3333;
     text-decoration: underline;
     text-decoration-style: wavy;
 }
 
 /* Post navigation */
-html[data-style="anarchist"] .post-navigation {
+body[data-style="anarchist"], body.style-anarchist .post-navigation {
     border-top: 2px solid #cc0000;
     border-bottom: 2px solid #cc0000;
     padding: 20px 0;

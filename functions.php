@@ -279,10 +279,12 @@ function queerdispatch_output_style_css() {
     $theme_dir     = get_template_directory();
     $styles        = queerdispatch_get_styles();
 
-    // Set data-style on <html> BEFORE any CSS is parsed to prevent FOUC
-    echo '<script>document.documentElement.setAttribute("data-style","' . esc_js( $current_style ) . '");</script>' . "\n";
+    // Set data-style on BOTH <html> and <body> before CSS is parsed (prevents FOUC).
+    // CSS selectors target body[data-style="X"] — body gets the attribute from header.php
+    // via body_class() but we also set it here early via JS for JS-driven switches.
+    echo '<script>(function(s){document.documentElement.setAttribute("data-style",s);if(document.body)document.body.setAttribute("data-style",s);document.addEventListener("DOMContentLoaded",function(){if(document.body)document.body.setAttribute("data-style",s);});})("' . esc_js( $current_style ) . '");</script>' . "\n";
 
-    // Load all theme CSS files — each is scoped to html[data-style="X"]
+    // Load all theme CSS files — each is scoped to body[data-style="X"]
     foreach ( array_keys( $styles ) as $style_id ) {
         $css_file = "/css/themes/{$style_id}.css";
         if ( file_exists( $theme_dir . $css_file ) ) {

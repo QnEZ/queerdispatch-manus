@@ -68,15 +68,14 @@
             styleName = DEFAULT_STYLE;
         }
 
-        // THE KEY FIX: just update data-style on <html>.
-        // All theme CSS files are already loaded; each one is scoped to
-        // html[data-style="X"] so only the matching file's rules apply.
+        // Set data-style on BODY — this is what the CSS selectors target:
+        // body[data-style="X"] { ... }
+        // Also set on html element as a belt-and-suspenders measure.
         document.documentElement.setAttribute('data-style', styleName);
 
-        // Also set on body for any legacy selectors
         if (document.body) {
             document.body.setAttribute('data-style', styleName);
-            // Keep body class in sync
+            // Keep body class in sync for any class-based fallbacks
             var cls = document.body.className.split(' ').filter(function (c) {
                 return c.indexOf('style-') !== 0;
             });
