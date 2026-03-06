@@ -227,12 +227,17 @@ function queerdispatch_get_styles() {
 }
 
 /**
- * Get the current style from cookie or default
+ * Get the current style from cookie, falling back to the Customizer default.
+ *
+ * Priority order:
+ *   1. Visitor's saved cookie (their personal preference)
+ *   2. Admin-chosen default in Appearance → Customize → Theme Style
+ *   3. Hard fallback of 'anarchist' if nothing is set anywhere
  */
 function queerdispatch_get_current_style() {
     $styles  = queerdispatch_get_styles();
-    $default = 'anarchist';
 
+    // 1. Visitor cookie takes highest priority
     if ( isset( $_COOKIE['queerdispatch_style'] ) ) {
         $style = sanitize_key( $_COOKIE['queerdispatch_style'] );
         if ( array_key_exists( $style, $styles ) ) {
@@ -240,7 +245,14 @@ function queerdispatch_get_current_style() {
         }
     }
 
-    return $default;
+    // 2. Admin-set Customizer default
+    $customizer_default = get_theme_mod( 'queerdispatch_default_style', 'anarchist' );
+    if ( array_key_exists( $customizer_default, $styles ) ) {
+        return $customizer_default;
+    }
+
+    // 3. Hard fallback
+    return 'anarchist';
 }
 
 /**
@@ -308,6 +320,7 @@ function queerdispatch_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'queerdispatch_default_style', array(
         'default'           => 'anarchist',
         'sanitize_callback' => 'sanitize_key',
+        'transport'         => 'postMessage', // enables live preview without full refresh
     ) );
 
     $styles        = queerdispatch_get_styles();
@@ -353,6 +366,21 @@ function queerdispatch_customize_register( $wp_customize ) {
     ) );
 }
 add_action( 'customize_register', 'queerdispatch_customize_register' );
+
+/**
+ * Enqueue the Customizer live-preview script.
+ * This runs inside the preview iframe and handles postMessage updates.
+ */
+function queerdispatch_customize_preview_js() {
+    wp_enqueue_script(
+        'queerdispatch-customizer-preview',
+        get_template_directory_uri() . '/js/customizer-preview.js',
+        array( 'customize-preview', 'jquery' ),
+        wp_get_theme()->get( 'Version' ),
+        true
+    );
+}
+add_action( 'customize_preview_init', 'queerdispatch_customize_preview_js' );
 
 // ============================================================
 // TEMPLATE TAGS & HELPERS
