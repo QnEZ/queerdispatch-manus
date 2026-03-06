@@ -271,9 +271,9 @@ body[data-style="riot-grrrl"] .article-list-item:hover , body.style-riot-grrrl .
 }
 
 /* Scrollbar */
-body[data-style="riot-grrrl"], body.style-riot-grrrl ::-webkit-scrollbar { width: 8px; }
-body[data-style="riot-grrrl"], body.style-riot-grrrl ::-webkit-scrollbar-track { background: #0d0d0d; }
-body[data-style="riot-grrrl"], body.style-riot-grrrl ::-webkit-scrollbar-thumb { background: #ff0080; border-radius: 0; }
+body[data-style="riot-grrrl"] ::-webkit-scrollbar, body.style-riot-grrrl ::-webkit-scrollbar { width: 8px; }
+body[data-style="riot-grrrl"] ::-webkit-scrollbar-track, body.style-riot-grrrl ::-webkit-scrollbar-track { background: #0d0d0d; }
+body[data-style="riot-grrrl"] ::-webkit-scrollbar-thumb, body.style-riot-grrrl ::-webkit-scrollbar-thumb { background: #ff0080; border-radius: 0; }
 
 /* Content links */
 body[data-style="riot-grrrl"] .single-post-content a , body.style-riot-grrrl .single-post-content a  {

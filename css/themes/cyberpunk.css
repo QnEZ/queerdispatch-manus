@@ -38,7 +38,7 @@ body[data-style="cyberpunk"], body.style-cyberpunk {
 }
 
 /* Scanline effect */
-body[data-style="cyberpunk"], body.style-cyberpunk::before {
+body[data-style="cyberpunk"]::before, body.style-cyberpunk::before {
     content: '';
     position: fixed;
     inset: 0;
@@ -312,9 +312,9 @@ body[data-style="cyberpunk"] .read-more , body.style-cyberpunk .read-more  {
 body[data-style="cyberpunk"] .read-more::before , body.style-cyberpunk .read-more::before  { content: '>> '; }
 
 /* Scrollbar */
-body[data-style="cyberpunk"], body.style-cyberpunk ::-webkit-scrollbar { width: 6px; }
-body[data-style="cyberpunk"], body.style-cyberpunk ::-webkit-scrollbar-track { background: #050510; }
-body[data-style="cyberpunk"], body.style-cyberpunk ::-webkit-scrollbar-thumb {
+body[data-style="cyberpunk"] ::-webkit-scrollbar, body.style-cyberpunk ::-webkit-scrollbar { width: 6px; }
+body[data-style="cyberpunk"] ::-webkit-scrollbar-track, body.style-cyberpunk ::-webkit-scrollbar-track { background: #050510; }
+body[data-style="cyberpunk"] ::-webkit-scrollbar-thumb, body.style-cyberpunk ::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, #ff00ff, #00ffff);
     box-shadow: 0 0 6px rgba(255,0,255,0.5);
 }

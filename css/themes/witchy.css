@@ -48,7 +48,7 @@ body[data-style="witchy"], body.style-witchy {
 }
 
 /* Stars effect */
-body[data-style="witchy"], body.style-witchy::before {
+body[data-style="witchy"]::before, body.style-witchy::before {
     content: '';
     position: fixed;
     inset: 0;
@@ -268,9 +268,9 @@ body[data-style="witchy"] .read-more , body.style-witchy .read-more  {
 body[data-style="witchy"] .read-more::after , body.style-witchy .read-more::after  { content: ' ✦'; }
 
 /* Scrollbar */
-body[data-style="witchy"], body.style-witchy ::-webkit-scrollbar { width: 8px; }
-body[data-style="witchy"], body.style-witchy ::-webkit-scrollbar-track { background: #0e0a1a; }
-body[data-style="witchy"], body.style-witchy ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #6b2fa0, #c8a020); border-radius: 4px; }
+body[data-style="witchy"] ::-webkit-scrollbar, body.style-witchy ::-webkit-scrollbar { width: 8px; }
+body[data-style="witchy"] ::-webkit-scrollbar-track, body.style-witchy ::-webkit-scrollbar-track { background: #0e0a1a; }
+body[data-style="witchy"] ::-webkit-scrollbar-thumb, body.style-witchy ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #6b2fa0, #c8a020); border-radius: 4px; }
 
 /* Moon phase decoration on sidebar */
 body[data-style="witchy"] .sidebar .widget:first-child .widget-title::before , body.style-witchy .sidebar .widget:first-child .widget-title::before  { content: '🌙 '; }

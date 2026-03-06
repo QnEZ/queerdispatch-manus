@@ -3,7 +3,7 @@
  * QueerDispatch Theme Functions
  *
  * @package QueerDispatch
- * @version 1.0.0
+ * @version 1.2.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -277,34 +277,40 @@ add_action( 'wp_ajax_queerdispatch_save_style', 'queerdispatch_save_style' );
 add_action( 'wp_ajax_nopriv_queerdispatch_save_style', 'queerdispatch_save_style' );
 
 /**
- * Load ALL theme CSS files simultaneously.
+ * Enqueue ALL theme CSS files simultaneously via wp_enqueue_style.
  *
- * WHY: Each theme file scopes its rules to html[data-style="X"] { ... }
+ * WHY: Each theme file scopes its rules to body[data-style="X"] { ... }
  * which has higher specificity than :root. So all files can be loaded at
  * once — only the one matching the current data-style attribute applies.
- * This eliminates the old bug where only one file was swapped via JS,
- * causing load-order specificity races that always resolved to Anarchist.
+ * Using wp_enqueue_style (instead of manual echo) ensures WordPress
+ * correctly resolves the theme directory URI in all environments.
  */
-function queerdispatch_output_style_css() {
-    $current_style = queerdispatch_get_current_style();
+function queerdispatch_enqueue_theme_styles() {
+    $theme_version = wp_get_theme()->get( 'Version' );
     $theme_uri     = get_template_directory_uri();
-    $theme_dir     = get_template_directory();
     $styles        = queerdispatch_get_styles();
 
-    // Set data-style on BOTH <html> and <body> before CSS is parsed (prevents FOUC).
-    // CSS selectors target body[data-style="X"] — body gets the attribute from header.php
-    // via body_class() but we also set it here early via JS for JS-driven switches.
-    echo '<script>(function(s){document.documentElement.setAttribute("data-style",s);if(document.body)document.body.setAttribute("data-style",s);document.addEventListener("DOMContentLoaded",function(){if(document.body)document.body.setAttribute("data-style",s);});})("' . esc_js( $current_style ) . '");</script>' . "\n";
-
-    // Load all theme CSS files — each is scoped to body[data-style="X"]
     foreach ( array_keys( $styles ) as $style_id ) {
-        $css_file = "/css/themes/{$style_id}.css";
-        if ( file_exists( $theme_dir . $css_file ) ) {
-            echo '<link rel="stylesheet" id="queerdispatch-theme-' . esc_attr( $style_id ) . '-css" href="' . esc_url( $theme_uri . $css_file ) . '" media="all">' . "\n";
-        }
+        wp_enqueue_style(
+            'queerdispatch-theme-' . $style_id,
+            $theme_uri . '/css/themes/' . $style_id . '.css',
+            array( 'queerdispatch-style' ),
+            $theme_version
+        );
     }
 }
-add_action( 'wp_head', 'queerdispatch_output_style_css', 5 );
+add_action( 'wp_enqueue_scripts', 'queerdispatch_enqueue_theme_styles' );
+
+/**
+ * Output the data-style attribute setter inline script early in <head>.
+ * This sets data-style on <html> immediately so CSS selectors match
+ * before the page is painted (prevents flash of unstyled content).
+ */
+function queerdispatch_output_style_init_script() {
+    $current_style = queerdispatch_get_current_style();
+    echo '<script>(function(s){document.documentElement.setAttribute("data-style",s);document.addEventListener("DOMContentLoaded",function(){if(document.body){document.body.setAttribute("data-style",s);}});})(' . json_encode( $current_style ) . ');</script>' . "\n";
+}
+add_action( 'wp_head', 'queerdispatch_output_style_init_script', 1 );
 
 // ============================================================
 // CUSTOMIZER

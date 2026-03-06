@@ -255,10 +255,10 @@ body[data-style="goth"] .read-more , body.style-goth .read-more  {
 }
 
 /* Scrollbar styling */
-body[data-style="goth"], body.style-goth ::-webkit-scrollbar { width: 8px; }
-body[data-style="goth"], body.style-goth ::-webkit-scrollbar-track { background: #080810; }
-body[data-style="goth"], body.style-goth ::-webkit-scrollbar-thumb { background: #4a0e6b; border-radius: 4px; }
-body[data-style="goth"], body.style-goth ::-webkit-scrollbar-thumb:hover { background: #8b1a4a; }
+body[data-style="goth"] ::-webkit-scrollbar, body.style-goth ::-webkit-scrollbar { width: 8px; }
+body[data-style="goth"] ::-webkit-scrollbar-track, body.style-goth ::-webkit-scrollbar-track { background: #080810; }
+body[data-style="goth"] ::-webkit-scrollbar-thumb, body.style-goth ::-webkit-scrollbar-thumb { background: #4a0e6b; border-radius: 4px; }
+body[data-style="goth"] ::-webkit-scrollbar-thumb:hover, body.style-goth ::-webkit-scrollbar-thumb:hover { background: #8b1a4a; }
 
 /* Glow effect on hover for links */
 body[data-style="goth"] a:hover , body.style-goth a:hover  { text-shadow: 0 0 8px rgba(139,26,74,0.6); }

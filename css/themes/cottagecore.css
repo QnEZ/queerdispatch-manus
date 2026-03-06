@@ -286,10 +286,10 @@ body[data-style="cottagecore"] .newsletter-form button , body.style-cottagecore 
 }
 
 /* Scrollbar */
-body[data-style="cottagecore"], body.style-cottagecore ::-webkit-scrollbar { width: 8px; }
-body[data-style="cottagecore"], body.style-cottagecore ::-webkit-scrollbar-track { background: #f5f0e8; }
-body[data-style="cottagecore"], body.style-cottagecore ::-webkit-scrollbar-thumb { background: #c8b890; border-radius: 4px; }
-body[data-style="cottagecore"], body.style-cottagecore ::-webkit-scrollbar-thumb:hover { background: #5a7a3a; }
+body[data-style="cottagecore"] ::-webkit-scrollbar, body.style-cottagecore ::-webkit-scrollbar { width: 8px; }
+body[data-style="cottagecore"] ::-webkit-scrollbar-track, body.style-cottagecore ::-webkit-scrollbar-track { background: #f5f0e8; }
+body[data-style="cottagecore"] ::-webkit-scrollbar-thumb, body.style-cottagecore ::-webkit-scrollbar-thumb { background: #c8b890; border-radius: 4px; }
+body[data-style="cottagecore"] ::-webkit-scrollbar-thumb:hover, body.style-cottagecore ::-webkit-scrollbar-thumb:hover { background: #5a7a3a; }
 
 /* Post content */
 body[data-style="cottagecore"] .single-post-content , body.style-cottagecore .single-post-content  { color: #3a2e20; }

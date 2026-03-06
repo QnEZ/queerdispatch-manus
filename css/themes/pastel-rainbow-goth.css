@@ -48,9 +48,9 @@ body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth {
 }
 
 /* Rainbow shimmer on scrollbar */
-body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth ::-webkit-scrollbar { width: 8px; }
-body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth ::-webkit-scrollbar-track { background: #0d0a14; }
-body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth ::-webkit-scrollbar-thumb {
+body[data-style="pastel-rainbow-goth"] ::-webkit-scrollbar, body.style-pastel-rainbow-goth ::-webkit-scrollbar { width: 8px; }
+body[data-style="pastel-rainbow-goth"] ::-webkit-scrollbar-track, body.style-pastel-rainbow-goth ::-webkit-scrollbar-track { background: #0d0a14; }
+body[data-style="pastel-rainbow-goth"] ::-webkit-scrollbar-thumb, body.style-pastel-rainbow-goth ::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, #ff9de2, #b8f0ff, #c8f0a0, #ffd0a0, #ff9de2);
     border-radius: 4px;
 }

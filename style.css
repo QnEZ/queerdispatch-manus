@@ -4,7 +4,7 @@ Theme URI: https://queerdispatch.org/
 Author: QueerDispatch Team
 Author URI: https://queerdispatch.org/
 Description: An independent LGBTQIA2S+ news & community theme with multiple switchable aesthetic styles: Anarchist, Goth, Witchy, Pastel Rainbow Goth, Cyberpunk Queer, Cottagecore Queer, and Riot Grrrl.
-Version: 1.2.1
+Version: 1.2.2
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
@@ -1254,4 +1254,290 @@ a:hover {
         background: white;
         color: black;
     }
+}
+
+/* ============================================================
+   STYLE VARIANT VARIABLE BLOCKS
+   All 7 styles are defined here inline so they always load
+   with the main stylesheet — no separate file dependencies.
+   Each block uses body[data-style="X"] which has higher
+   specificity than :root and always wins.
+   ============================================================ */
+
+/* ── 1. ANARCHIST ─────────────────────────────────────────── */
+body[data-style="anarchist"],
+body.style-anarchist {
+    --color-bg:               #0d0d0d;
+    --color-bg-secondary:     #111111;
+    --color-bg-card:          #111111;
+    --color-text:             #e8e8e8;
+    --color-text-muted:       #999999;
+    --color-accent:           #cc0000;
+    --color-accent-hover:     #ff0000;
+    --color-accent-secondary: #ff4444;
+    --color-border:           #cc0000;
+    --color-header-bg:        #000000;
+    --color-header-text:      #ffffff;
+    --color-nav-bg:           #0a0a0a;
+    --color-nav-text:         #e8e8e8;
+    --color-footer-bg:        #000000;
+    --color-footer-text:      #888888;
+    --color-tag-bg:           #cc0000;
+    --color-tag-text:         #ffffff;
+    --color-button-bg:        #cc0000;
+    --color-button-text:      #ffffff;
+    --color-button-hover:     #ff0000;
+    --color-hero-overlay:     rgba(0,0,0,0.7);
+    --font-heading:           'Anton', 'Impact', sans-serif;
+    --font-body:              'Courier Prime', 'Courier New', monospace;
+    --font-nav:               'Anton', 'Impact', sans-serif;
+    --border-radius:          0px;
+    --card-shadow:            3px 3px 0 #cc0000;
+    --header-border:          3px solid #cc0000;
+    --section-divider:        2px solid #cc0000;
+    background-color:         #0d0d0d;
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(204,0,0,0.03) 10px,
+            rgba(204,0,0,0.03) 11px
+        );
+}
+
+/* ── 2. GOTH ──────────────────────────────────────────────── */
+body[data-style="goth"],
+body.style-goth {
+    --color-bg:               #080810;
+    --color-bg-secondary:     #0f0a1a;
+    --color-bg-card:          #0d0a18;
+    --color-text:             #d4c5e8;
+    --color-text-muted:       #8a7a9a;
+    --color-accent:           #8b1a4a;
+    --color-accent-hover:     #b02060;
+    --color-accent-secondary: #4a0e6b;
+    --color-border:           #2a1a3a;
+    --color-header-bg:        #050508;
+    --color-header-text:      #e8d8f8;
+    --color-nav-bg:           #080810;
+    --color-nav-text:         #c8b8e0;
+    --color-footer-bg:        #050508;
+    --color-footer-text:      #6a5a7a;
+    --color-tag-bg:           #1a0a2a;
+    --color-tag-text:         #c8a8e8;
+    --color-button-bg:        #4a0e6b;
+    --color-button-text:      #e8d8f8;
+    --color-button-hover:     #8b1a4a;
+    --color-hero-overlay:     rgba(8,8,16,0.75);
+    --font-heading:           'Cinzel', 'Times New Roman', serif;
+    --font-body:              'Playfair Display', Georgia, serif;
+    --font-nav:               'Cinzel', serif;
+    --border-radius:          0px;
+    --card-shadow:            0 4px 20px rgba(139,26,74,0.3);
+    --header-border:          1px solid #2a1a3a;
+    --section-divider:        1px solid #2a1a3a;
+    background-color:         #080810;
+    background-image:
+        radial-gradient(ellipse at top, #0f0a1a 0%, #080810 60%);
+    background-attachment:    fixed;
+}
+
+/* ── 3. WITCHY ────────────────────────────────────────────── */
+body[data-style="witchy"],
+body.style-witchy {
+    --color-bg:               #0e0a1a;
+    --color-bg-secondary:     #150f22;
+    --color-bg-card:          #120d1e;
+    --color-text:             #e8dcc8;
+    --color-text-muted:       #9a8a6a;
+    --color-accent:           #c8a020;
+    --color-accent-hover:     #e8c040;
+    --color-accent-secondary: #6b2fa0;
+    --color-border:           #2d1f4a;
+    --color-header-bg:        #0a0714;
+    --color-header-text:      #f0e8d0;
+    --color-nav-bg:           #0e0a1a;
+    --color-nav-text:         #d8c8a8;
+    --color-footer-bg:        #0a0714;
+    --color-footer-text:      #7a6a4a;
+    --color-tag-bg:           #1e1030;
+    --color-tag-text:         #c8a020;
+    --color-button-bg:        #6b2fa0;
+    --color-button-text:      #f0e8d0;
+    --color-button-hover:     #8b4fc0;
+    --color-hero-overlay:     rgba(14,10,26,0.7);
+    --font-heading:           'UnifrakturMaguntia', 'Palatino Linotype', serif;
+    --font-body:              'Josefin Sans', Georgia, sans-serif;
+    --font-nav:               'Josefin Sans', sans-serif;
+    --border-radius:          2px;
+    --card-shadow:            0 4px 20px rgba(107,47,160,0.25);
+    --header-border:          1px solid #2d1f4a;
+    --section-divider:        1px solid #2d1f4a;
+    background-color:         #0e0a1a;
+    background-image:
+        radial-gradient(ellipse at 20% 20%, rgba(107,47,160,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(45,107,58,0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 0%, rgba(200,160,32,0.05) 0%, transparent 40%);
+    background-attachment:    fixed;
+}
+
+/* ── 4. PASTEL RAINBOW GOTH ───────────────────────────────── */
+body[data-style="pastel-rainbow-goth"],
+body.style-pastel-rainbow-goth {
+    --color-bg:               #0d0a14;
+    --color-bg-secondary:     #150f1e;
+    --color-bg-card:          #120d1a;
+    --color-text:             #f0e8ff;
+    --color-text-muted:       #b8a8cc;
+    --color-accent:           #ff9de2;
+    --color-accent-hover:     #ffb3ec;
+    --color-accent-secondary: #a8d8ff;
+    --color-border:           #3a2a4a;
+    --color-header-bg:        #0a0810;
+    --color-header-text:      #f8f0ff;
+    --color-nav-bg:           #0d0a14;
+    --color-nav-text:         #e8d8ff;
+    --color-footer-bg:        #0a0810;
+    --color-footer-text:      #8a7a9a;
+    --color-tag-bg:           #1e1430;
+    --color-tag-text:         #ff9de2;
+    --color-button-bg:        #7b4fa8;
+    --color-button-text:      #f8f0ff;
+    --color-button-hover:     #ff9de2;
+    --color-hero-overlay:     rgba(13,10,20,0.65);
+    --font-heading:           'Quicksand', 'Trebuchet MS', sans-serif;
+    --font-body:              'Quicksand', 'Trebuchet MS', sans-serif;
+    --font-nav:               'Quicksand', sans-serif;
+    --border-radius:          12px;
+    --card-shadow:            0 4px 20px rgba(255,157,226,0.2);
+    --header-border:          1px solid rgba(255,157,226,0.2);
+    --section-divider:        1px solid rgba(168,216,255,0.2);
+    background-color:         #0d0a14;
+    background-image:
+        linear-gradient(135deg,
+            rgba(255,157,226,0.06) 0%,
+            rgba(168,216,255,0.06) 33%,
+            rgba(168,255,200,0.06) 66%,
+            rgba(255,220,100,0.06) 100%);
+    background-attachment:    fixed;
+}
+
+/* ── 5. CYBERPUNK QUEER ───────────────────────────────────── */
+body[data-style="cyberpunk"],
+body.style-cyberpunk {
+    --color-bg:               #050510;
+    --color-bg-secondary:     #0a0a1e;
+    --color-bg-card:          #080818;
+    --color-text:             #e0f8ff;
+    --color-text-muted:       #6a9aaa;
+    --color-accent:           #00ffff;
+    --color-accent-hover:     #40ffff;
+    --color-accent-secondary: #ff00aa;
+    --color-border:           #00ffff33;
+    --color-header-bg:        #020208;
+    --color-header-text:      #00ffff;
+    --color-nav-bg:           #050510;
+    --color-nav-text:         #b0e8f8;
+    --color-footer-bg:        #020208;
+    --color-footer-text:      #3a6a7a;
+    --color-tag-bg:           #0a1a2a;
+    --color-tag-text:         #00ffff;
+    --color-button-bg:        #ff00aa;
+    --color-button-text:      #ffffff;
+    --color-button-hover:     #ff40cc;
+    --color-hero-overlay:     rgba(5,5,16,0.7);
+    --font-heading:           'Orbitron', 'Courier New', monospace;
+    --font-body:              'Courier Prime', 'Courier New', monospace;
+    --font-nav:               'Orbitron', monospace;
+    --border-radius:          0px;
+    --card-shadow:            0 0 15px rgba(0,255,255,0.15), 0 0 30px rgba(255,0,170,0.1);
+    --header-border:          1px solid rgba(0,255,255,0.3);
+    --section-divider:        1px solid rgba(0,255,255,0.2);
+    background-color:         #050510;
+    background-image:
+        linear-gradient(rgba(0,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,0.03) 1px, transparent 1px);
+    background-size:          40px 40px;
+    background-attachment:    fixed;
+}
+
+/* ── 6. COTTAGECORE QUEER ─────────────────────────────────── */
+body[data-style="cottagecore"],
+body.style-cottagecore {
+    --color-bg:               #f5f0e8;
+    --color-bg-secondary:     #ede5d8;
+    --color-bg-card:          #faf6f0;
+    --color-text:             #3a2e1e;
+    --color-text-muted:       #7a6a50;
+    --color-accent:           #5a8a3a;
+    --color-accent-hover:     #4a7a2a;
+    --color-accent-secondary: #c87840;
+    --color-border:           #d0c0a8;
+    --color-header-bg:        #ede5d8;
+    --color-header-text:      #3a2e1e;
+    --color-nav-bg:           #e8ddd0;
+    --color-nav-text:         #4a3a28;
+    --color-footer-bg:        #d8cfc0;
+    --color-footer-text:      #6a5a40;
+    --color-tag-bg:           #d0e8c0;
+    --color-tag-text:         #3a5a20;
+    --color-button-bg:        #5a8a3a;
+    --color-button-text:      #ffffff;
+    --color-button-hover:     #4a7a2a;
+    --color-hero-overlay:     rgba(58,46,30,0.5);
+    --font-heading:           'Playfair Display', Georgia, serif;
+    --font-body:              'Raleway', 'Gill Sans', sans-serif;
+    --font-nav:               'Raleway', sans-serif;
+    --border-radius:          8px;
+    --card-shadow:            0 2px 12px rgba(58,46,30,0.1);
+    --header-border:          1px solid #d0c0a8;
+    --section-divider:        1px solid #d0c0a8;
+    background-color:         #f5f0e8;
+    background-image:
+        radial-gradient(ellipse at 10% 90%, rgba(90,138,58,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 10%, rgba(200,120,64,0.06) 0%, transparent 50%);
+    background-attachment:    fixed;
+}
+
+/* ── 7. RIOT GRRRL ────────────────────────────────────────── */
+body[data-style="riot-grrrl"],
+body.style-riot-grrrl {
+    --color-bg:               #0d0d0d;
+    --color-bg-secondary:     #111111;
+    --color-bg-card:          #111111;
+    --color-text:             #f0f0f0;
+    --color-text-muted:       #aaaaaa;
+    --color-accent:           #ff0080;
+    --color-accent-hover:     #ff40a0;
+    --color-accent-secondary: #ffff00;
+    --color-border:           #ff0080;
+    --color-header-bg:        #000000;
+    --color-header-text:      #ff0080;
+    --color-nav-bg:           #0a0a0a;
+    --color-nav-text:         #f0f0f0;
+    --color-footer-bg:        #000000;
+    --color-footer-text:      #888888;
+    --color-tag-bg:           #ff0080;
+    --color-tag-text:         #ffffff;
+    --color-button-bg:        #ff0080;
+    --color-button-text:      #ffffff;
+    --color-button-hover:     #ff40a0;
+    --color-hero-overlay:     rgba(0,0,0,0.7);
+    --font-heading:           'Abril Fatface', 'Georgia', serif;
+    --font-body:              'Special Elite', 'Courier New', monospace;
+    --font-nav:               'Abril Fatface', serif;
+    --border-radius:          0px;
+    --card-shadow:            4px 4px 0 #ff0080;
+    --header-border:          3px solid #ff0080;
+    --section-divider:        2px solid #ff0080;
+    background-color:         #0d0d0d;
+    background-image:
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 8px,
+            rgba(255,0,128,0.04) 8px,
+            rgba(255,0,128,0.04) 9px
+        );
 }
