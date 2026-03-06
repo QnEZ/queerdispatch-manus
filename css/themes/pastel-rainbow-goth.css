@@ -283,15 +283,15 @@ body[data-style="pastel-rainbow-goth"] .article-list-item:hover , body.style-pas
 }
 
 /* Input fields */
-body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth input[type="email"],
-body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth input[type="search"],
-body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth input[type="text"],
+body[data-style="pastel-rainbow-goth"] input[type="email"], body.style-pastel-rainbow-goth input[type="email"],
+body[data-style="pastel-rainbow-goth"] input[type="search"], body.style-pastel-rainbow-goth input[type="search"],
+body[data-style="pastel-rainbow-goth"] input[type="text"], body.style-pastel-rainbow-goth input[type="text"],
 body[data-style="pastel-rainbow-goth"] textarea , body.style-pastel-rainbow-goth textarea  { border-radius: 24px; }
 
 /* Pagination */
 body[data-style="pastel-rainbow-goth"] .page-numbers , body.style-pastel-rainbow-goth .page-numbers  { border-radius: 50%; }
 
-body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .page-numbers:hover,
+body[data-style="pastel-rainbow-goth"] .page-numbers:hover, body.style-pastel-rainbow-goth .page-numbers:hover,
 body[data-style="pastel-rainbow-goth"] .page-numbers.current , body.style-pastel-rainbow-goth .page-numbers.current  {
     background: linear-gradient(135deg, #c060e0, #ff9de2);
     border-color: transparent;

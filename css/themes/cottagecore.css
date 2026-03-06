@@ -264,9 +264,9 @@ body[data-style="cottagecore"] .article-list-item:hover , body.style-cottagecore
 }
 
 /* Input fields */
-body[data-style="cottagecore"], body.style-cottagecore input[type="email"],
-body[data-style="cottagecore"], body.style-cottagecore input[type="search"],
-body[data-style="cottagecore"], body.style-cottagecore input[type="text"],
+body[data-style="cottagecore"] input[type="email"], body.style-cottagecore input[type="email"],
+body[data-style="cottagecore"] input[type="search"], body.style-cottagecore input[type="search"],
+body[data-style="cottagecore"] input[type="text"], body.style-cottagecore input[type="text"],
 body[data-style="cottagecore"] textarea , body.style-cottagecore textarea  {
     border-radius: 24px;
     background: #f8f4ec;
@@ -274,7 +274,7 @@ body[data-style="cottagecore"] textarea , body.style-cottagecore textarea  {
     color: #3a2e20;
 }
 
-body[data-style="cottagecore"], body.style-cottagecore input[type="email"]:focus,
+body[data-style="cottagecore"] input[type="email"]:focus, body.style-cottagecore input[type="email"]:focus,
 body[data-style="cottagecore"] input[type="search"]:focus , body.style-cottagecore input[type="search"]:focus  {
     border-color: #5a7a3a;
 }
