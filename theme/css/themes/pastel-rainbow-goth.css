@@ -38,7 +38,7 @@ body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth {
 }
 
 /* Dreamy dark background with subtle rainbow shimmer */
-body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth body {
+body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth {
     background-color: #0d0a14;
     background-image:
         radial-gradient(ellipse at 0% 0%, rgba(255,157,226,0.08) 0%, transparent 40%),

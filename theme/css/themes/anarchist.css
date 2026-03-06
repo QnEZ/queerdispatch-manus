@@ -37,7 +37,7 @@ body[data-style="anarchist"], body.style-anarchist {
 }
 
 /* Distressed texture overlay on body */
-body[data-style="anarchist"], body.style-anarchist body::before {
+body[data-style="anarchist"], body.style-anarchist::before {
     content: '';
     position: fixed;
     inset: 0;

@@ -38,7 +38,7 @@ body[data-style="witchy"], body.style-witchy {
 }
 
 /* Mystical starfield background */
-body[data-style="witchy"], body.style-witchy body {
+body[data-style="witchy"], body.style-witchy {
     background-color: #0e0a1a;
     background-image:
         radial-gradient(ellipse at 20% 20%, rgba(107,47,160,0.15) 0%, transparent 50%),
@@ -48,7 +48,7 @@ body[data-style="witchy"], body.style-witchy body {
 }
 
 /* Stars effect */
-body[data-style="witchy"], body.style-witchy body::before {
+body[data-style="witchy"], body.style-witchy::before {
     content: '';
     position: fixed;
     inset: 0;

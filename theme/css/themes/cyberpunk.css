@@ -38,7 +38,7 @@ body[data-style="cyberpunk"], body.style-cyberpunk {
 }
 
 /* Scanline effect */
-body[data-style="cyberpunk"], body.style-cyberpunk body::before {
+body[data-style="cyberpunk"], body.style-cyberpunk::before {
     content: '';
     position: fixed;
     inset: 0;
@@ -54,7 +54,7 @@ body[data-style="cyberpunk"], body.style-cyberpunk body::before {
 }
 
 /* Grid background */
-body[data-style="cyberpunk"], body.style-cyberpunk body {
+body[data-style="cyberpunk"], body.style-cyberpunk {
     background-color: #050510;
     background-image:
         linear-gradient(rgba(0,255,255,0.03) 1px, transparent 1px),
