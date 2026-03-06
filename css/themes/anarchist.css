@@ -1,224 +1,332 @@
-/*
- * QueerDispatch — Anarchist Style
- * Black & red, DIY punk zine, distressed textures, raw energy
+/**
+ * QueerDispatch Theme — Anarchist Style
  *
- * FIX: All variables scoped to body[data-style="anarchist"], body.style-anarchist to override
- * the :root defaults in style.css regardless of load order.
+ * Design: Black & red punk zine, distressed textures, propaganda poster energy
+ * Selectors: body[data-style="anarchist"] .element, body.style-anarchist .element
+ * ALL descendant rules MUST include the descendant selector on BOTH sides of the comma.
+ *
+ * @package QueerDispatch
  */
 
-body[data-style="anarchist"], body.style-anarchist {
-    --color-bg: #0d0d0d;
-    --color-bg-secondary: #1a1a1a;
-    --color-bg-card: #111111;
-    --color-text: #e8e8e8;
-    --color-text-muted: #888888;
-    --color-accent: #cc0000;
-    --color-accent-hover: #ff2222;
-    --color-accent-secondary: #ff6600;
-    --color-border: #2a2a2a;
-    --color-header-bg: #0d0d0d;
-    --color-header-text: #ffffff;
-    --color-nav-bg: #1a0000;
-    --color-nav-text: #ff3333;
-    --color-footer-bg: #0a0a0a;
-    --color-footer-text: #aaaaaa;
-    --color-tag-bg: #cc0000;
-    --color-tag-text: #ffffff;
-    --color-button-bg: #cc0000;
+/* ============================================================
+   ROOT VARIABLES — scoped to body with this style active
+   ============================================================ */
+body[data-style="anarchist"],
+body.style-anarchist {
+    --color-bg:          #0d0d0d;
+    --color-bg-secondary:#1a1a1a;
+    --color-bg-card:     #111111;
+    --color-text:        #e8e8e8;
+    --color-text-muted:  #999999;
+    --color-accent:      #cc0000;
+    --color-accent-2:    #ff3333;
+    --color-border:      #cc0000;
+    --color-footer-bg:   #0a0a0a;
+    --color-footer-text: #999999;
+    --color-button-bg:   #cc0000;
     --color-button-text: #ffffff;
-    --color-button-hover: #ff0000;
-    --font-heading: 'Anton', 'Impact', 'Arial Black', sans-serif;
-    --font-body: 'Courier Prime', 'Courier New', monospace;
-    --font-nav: 'Anton', 'Impact', sans-serif;
-    --border-radius: 0px;
-    --card-shadow: 3px 3px 0px var(--color-accent);
-    --header-border: 3px solid #cc0000;
-    --section-divider: 2px solid #cc0000;
+    --color-button-hover:#ff0000;
+    --font-heading:      'Anton', 'Impact', sans-serif;
+    --font-body:         'Courier Prime', 'Courier New', monospace;
+    --font-nav:          'Anton', 'Impact', sans-serif;
+    --font-size-h1:      3rem;
+    --font-size-h2:      2rem;
+    --font-size-h3:      1.4rem;
+    --border-radius:     0px;
+    --card-shadow:       4px 4px 0 #cc0000;
+    --header-border:     3px solid #cc0000;
+    --section-divider:   2px solid #cc0000;
+    background-color:    #0d0d0d;
+    color:               #e8e8e8;
+    font-family:         'Courier Prime', 'Courier New', monospace;
 }
 
-/* Distressed texture overlay on body */
-body[data-style="anarchist"], body.style-anarchist body::before {
+/* Distressed texture overlay */
+body[data-style="anarchist"]::before,
+body.style-anarchist::before {
     content: '';
     position: fixed;
-    inset: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     background-image:
         repeating-linear-gradient(
             0deg,
             transparent,
             transparent 2px,
-            rgba(255,255,255,0.01) 2px,
-            rgba(255,255,255,0.01) 4px
+            rgba(0,0,0,0.03) 2px,
+            rgba(0,0,0,0.03) 4px
         );
     pointer-events: none;
-    z-index: 9998;
+    z-index: 0;
 }
 
-/* Spray-paint style section titles */
-body[data-style="anarchist"], body.style-anarchist .section-title {
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+body[data-style="anarchist"] h1,
+body[data-style="anarchist"] h2,
+body[data-style="anarchist"] h3,
+body[data-style="anarchist"] h4,
+body.style-anarchist h1,
+body.style-anarchist h2,
+body.style-anarchist h3,
+body.style-anarchist h4 {
+    font-family: 'Anton', 'Impact', sans-serif;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    position: relative;
+    letter-spacing: 2px;
+    color: #e8e8e8;
 }
 
-body[data-style="anarchist"], body.style-anarchist .section-title::after {
-    content: '';
-    display: block;
-    height: 3px;
-    background: repeating-linear-gradient(
-        90deg,
-        #cc0000 0px,
-        #cc0000 8px,
-        transparent 8px,
-        transparent 12px
-    );
-    margin-top: 6px;
+/* ============================================================
+   SECTION TITLES
+   ============================================================ */
+body[data-style="anarchist"] .section-title,
+body.style-anarchist .section-title {
+    font-family: 'Anton', 'Impact', sans-serif;
+    color: #cc0000;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border-bottom: 3px solid #cc0000;
+    padding-bottom: 8px;
 }
 
-/* Torn-edge card effect */
-body[data-style="anarchist"], body.style-anarchist .article-card {
-    border-left: 4px solid #cc0000;
-    position: relative;
+body[data-style="anarchist"] .section-title::after,
+body.style-anarchist .section-title::after {
+    display: none;
 }
 
-body[data-style="anarchist"], body.style-anarchist .article-card::after {
+/* ============================================================
+   ARTICLE CARDS
+   ============================================================ */
+body[data-style="anarchist"] .article-card,
+body.style-anarchist .article-card {
+    border: 2px solid #cc0000;
+    border-radius: 0;
+    box-shadow: 4px 4px 0 #cc0000;
+    background-color: #111111;
+}
+
+body[data-style="anarchist"] .article-card::after,
+body.style-anarchist .article-card::after {
     content: '';
     position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
+    inset: 0;
     background: repeating-linear-gradient(
-        90deg,
-        #cc0000 0px,
-        #cc0000 6px,
-        transparent 6px,
-        transparent 10px
+        -45deg,
+        transparent,
+        transparent 10px,
+        rgba(204,0,0,0.03) 10px,
+        rgba(204,0,0,0.03) 11px
     );
+    pointer-events: none;
 }
 
-/* Hero — bold propaganda poster feel */
-body[data-style="anarchist"], body.style-anarchist .hero-content {
-    border-left: 6px solid #cc0000;
-    background: #1a0000;
-}
-
-body[data-style="anarchist"], body.style-anarchist .hero-title {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 3px 3px 0px rgba(204,0,0,0.4);
-}
-
-/* Navigation — stencil style */
-body[data-style="anarchist"], body.style-anarchist .nav-menu a {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    border-right: 1px solid #2a0000;
-}
-
-body[data-style="anarchist"], body.style-anarchist .nav-menu a:hover,
-body[data-style="anarchist"], body.style-anarchist .nav-menu .current-menu-item > a {
-    background-color: #cc0000;
-    color: #ffffff;
-}
-
-/* Site title — bold impact */
-body[data-style="anarchist"], body.style-anarchist .site-title {
-    font-size: 2rem;
-    letter-spacing: 4px;
-    color: #ffffff;
-    text-shadow: 2px 2px 0px #cc0000;
-}
-
-/* Breaking news bar */
-body[data-style="anarchist"], body.style-anarchist .breaking-news-bar {
-    background: repeating-linear-gradient(
-        45deg,
-        #cc0000,
-        #cc0000 10px,
-        #990000 10px,
-        #990000 20px
-    );
-}
-
-/* Widget titles */
-body[data-style="anarchist"], body.style-anarchist .widget-title {
-    background: #cc0000;
+body[data-style="anarchist"] .card-title,
+body.style-anarchist .card-title {
     font-family: 'Anton', 'Impact', sans-serif;
-    letter-spacing: 3px;
+    color: #e8e8e8;
     text-transform: uppercase;
-}
-
-/* Footer */
-body[data-style="anarchist"], body.style-anarchist .site-footer {
-    border-top: 4px solid #cc0000;
-}
-
-/* Blockquote — manifesto style */
-body[data-style="anarchist"], body.style-anarchist .single-post-content blockquote {
-    border-left: 6px solid #cc0000;
-    background: #1a0000;
-    font-style: normal;
-    font-family: 'Anton', 'Impact', sans-serif;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-/* Tags */
-body[data-style="anarchist"], body.style-anarchist .tag {
-    border-radius: 0;
-    font-family: 'Anton', 'Impact', sans-serif;
     letter-spacing: 1px;
 }
 
-/* Read more links */
-body[data-style="anarchist"], body.style-anarchist .read-more {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-family: 'Anton', 'Impact', sans-serif;
+body[data-style="anarchist"] .card-title a,
+body.style-anarchist .card-title a {
+    color: #e8e8e8;
+    text-decoration: none;
 }
 
-/* Buttons */
-body[data-style="anarchist"], body.style-anarchist .btn {
-    border-radius: 0;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-family: 'Anton', 'Impact', sans-serif;
-    border: 2px solid #cc0000;
-}
-
-body[data-style="anarchist"], body.style-anarchist .btn:hover {
-    background: transparent;
+body[data-style="anarchist"] .card-title a:hover,
+body.style-anarchist .card-title a:hover {
     color: #cc0000;
 }
 
-/* Style switcher panel */
-body[data-style="anarchist"], body.style-anarchist .style-switcher-toggle {
-    background: #cc0000;
+/* ============================================================
+   HERO
+   ============================================================ */
+body[data-style="anarchist"] .hero-content,
+body.style-anarchist .hero-content {
+    background: linear-gradient(135deg, rgba(204,0,0,0.2), transparent);
+    border-left: 6px solid #cc0000;
+    padding-left: 20px;
+}
+
+body[data-style="anarchist"] .hero-title,
+body.style-anarchist .hero-title {
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-shadow: 3px 3px 0 #cc0000;
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+body[data-style="anarchist"] .nav-menu a,
+body.style-anarchist .nav-menu a {
+    font-family: 'Anton', 'Impact', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #e8e8e8;
+}
+
+body[data-style="anarchist"] .nav-menu a:hover,
+body[data-style="anarchist"] .nav-menu .current-menu-item > a,
+body.style-anarchist .nav-menu a:hover,
+body.style-anarchist .nav-menu .current-menu-item > a {
+    color: #cc0000;
+    background-color: transparent;
+}
+
+/* ============================================================
+   SITE TITLE
+   ============================================================ */
+body[data-style="anarchist"] .site-title,
+body.style-anarchist .site-title {
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #cc0000;
+}
+
+body[data-style="anarchist"] .site-title a,
+body.style-anarchist .site-title a {
+    color: #cc0000;
+    text-decoration: none;
+}
+
+/* ============================================================
+   BREAKING NEWS
+   ============================================================ */
+body[data-style="anarchist"] .breaking-news-bar,
+body.style-anarchist .breaking-news-bar {
+    background-color: #cc0000;
+    border-bottom: 2px solid #ff0000;
+}
+
+body[data-style="anarchist"] .breaking-label,
+body.style-anarchist .breaking-label {
+    font-family: 'Anton', 'Impact', sans-serif;
+    background-color: #000000;
+    color: #cc0000;
+    letter-spacing: 3px;
+}
+
+/* ============================================================
+   SIDEBAR WIDGETS
+   ============================================================ */
+body[data-style="anarchist"] .widget-title,
+body.style-anarchist .widget-title {
+    font-family: 'Anton', 'Impact', sans-serif;
+    background-color: #cc0000;
+    color: #ffffff;
+    letter-spacing: 3px;
+    border-radius: 0;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+body[data-style="anarchist"] .site-footer,
+body.style-anarchist .site-footer {
+    background-color: #0a0a0a;
+    border-top: 3px solid #cc0000;
+}
+
+/* ============================================================
+   BLOCKQUOTES
+   ============================================================ */
+body[data-style="anarchist"] .single-post-content blockquote,
+body.style-anarchist .single-post-content blockquote {
+    border-left: 6px solid #cc0000;
+    background-color: #1a1a1a;
+    font-family: 'Anton', 'Impact', sans-serif;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #e8e8e8;
+}
+
+/* ============================================================
+   TAGS
+   ============================================================ */
+body[data-style="anarchist"] .tag,
+body.style-anarchist .tag {
+    background-color: #cc0000;
+    color: #ffffff;
+    border-radius: 0;
+    font-family: 'Anton', 'Impact', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+}
+
+/* ============================================================
+   READ MORE / BUTTONS
+   ============================================================ */
+body[data-style="anarchist"] .read-more,
+body.style-anarchist .read-more {
+    color: #cc0000;
+    font-family: 'Anton', 'Impact', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+body[data-style="anarchist"] .btn,
+body.style-anarchist .btn {
+    background-color: #cc0000;
+    color: #ffffff;
+    border-radius: 0;
+    font-family: 'Anton', 'Impact', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 2px solid #cc0000;
+}
+
+body[data-style="anarchist"] .btn:hover,
+body.style-anarchist .btn:hover {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color: #ffffff;
+}
+
+/* ============================================================
+   STYLE SWITCHER
+   ============================================================ */
+body[data-style="anarchist"] .style-switcher-toggle,
+body.style-anarchist .style-switcher-toggle {
+    background-color: #cc0000;
+    color: #ffffff;
     border-radius: 0;
     font-family: 'Anton', 'Impact', sans-serif;
     letter-spacing: 2px;
 }
 
-/* Horizontal rule */
-body[data-style="anarchist"], body.style-anarchist hr {
-    border: none;
-    border-top: 2px solid #cc0000;
-    margin: 32px 0;
-}
-
-/* Links in content */
-body[data-style="anarchist"], body.style-anarchist .single-post-content a {
+/* ============================================================
+   LINKS IN POST CONTENT
+   ============================================================ */
+body[data-style="anarchist"] .single-post-content a,
+body.style-anarchist .single-post-content a {
     color: #ff3333;
     text-decoration: underline;
-    text-decoration-style: wavy;
 }
 
-/* Post navigation */
-body[data-style="anarchist"], body.style-anarchist .post-navigation {
+/* ============================================================
+   POST NAVIGATION
+   ============================================================ */
+body[data-style="anarchist"] .post-navigation,
+body.style-anarchist .post-navigation {
     border-top: 2px solid #cc0000;
-    border-bottom: 2px solid #cc0000;
-    padding: 20px 0;
     margin: 32px 0;
+}
+
+body[data-style="anarchist"] .post-navigation a,
+body.style-anarchist .post-navigation a {
+    color: #cc0000;
+    font-family: 'Anton', 'Impact', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
 }

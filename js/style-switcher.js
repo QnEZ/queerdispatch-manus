@@ -75,12 +75,15 @@
 
         if (document.body) {
             document.body.setAttribute('data-style', styleName);
-            // Keep body class in sync for any class-based fallbacks
-            var cls = document.body.className.split(' ').filter(function (c) {
-                return c.indexOf('style-') !== 0;
-            });
-            cls.push('style-' + styleName);
-            document.body.className = cls.join(' ').trim();
+            // Only add/remove style-* classes — never touch other WordPress body classes
+            // Remove any existing style-* class using classList to avoid stripping WP classes
+            var existingClasses = Array.prototype.slice.call(document.body.classList);
+            for (var j = 0; j < existingClasses.length; j++) {
+                if (existingClasses[j].indexOf('style-') === 0) {
+                    document.body.classList.remove(existingClasses[j]);
+                }
+            }
+            document.body.classList.add('style-' + styleName);
         }
 
         // Persist
