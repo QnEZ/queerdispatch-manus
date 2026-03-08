@@ -54,11 +54,12 @@ class QueerDispatch_GitHub_Updater {
      * Constructor — registers all WordPress hooks.
      */
     public function __construct() {
-        add_filter( 'pre_set_site_transient_update_themes', array( $this, 'check_for_update' ) );
-        add_filter( 'themes_api',                           array( $this, 'theme_info' ), 10, 3 );
-        add_action( 'upgrader_process_complete',            array( $this, 'clear_cache' ), 10, 2 );
-        add_action( 'admin_notices',                        array( $this, 'maybe_show_update_notice' ) );
-        add_action( 'wp_ajax_queerdispatch_dismiss_update', array( $this, 'dismiss_update_notice' ) );
+        add_filter( 'pre_set_site_transient_update_themes',  array( $this, 'check_for_update' ) );
+        add_filter( 'themes_api',                            array( $this, 'theme_info' ), 10, 3 );
+        add_filter( 'upgrader_source_selection',             array( $this, 'fix_source_dir' ), 10, 4 );
+        add_action( 'upgrader_process_complete',             array( $this, 'clear_cache' ), 10, 2 );
+        add_action( 'admin_notices',                         array( $this, 'maybe_show_update_notice' ) );
+        add_action( 'wp_ajax_queerdispatch_dismiss_update',  array( $this, 'dismiss_update_notice' ) );
     }
 
     // ----------------------------------------------------------------
@@ -214,6 +215,53 @@ class QueerDispatch_GitHub_Updater {
         );
 
         return $info;
+    }
+
+    /**
+     * Rename the extracted source directory to the correct theme slug.
+     *
+     * When WordPress extracts a ZIP whose top-level folder doesn't exactly
+     * match the installed theme's directory name, it installs a *new* theme
+     * instead of overwriting the existing one. This filter renames the
+     * extracted folder to $theme_slug before WordPress moves it into place,
+     * ensuring the update overwrites the correct directory.
+     *
+     * @param  string      $source        Extracted source path.
+     * @param  string      $remote_source Temp directory containing the ZIP.
+     * @param  WP_Upgrader $upgrader      Upgrader instance.
+     * @param  array       $hook_extra    Extra hook data.
+     * @return string|WP_Error           Corrected source path, or WP_Error.
+     */
+    public function fix_source_dir( $source, $remote_source, $upgrader, $hook_extra ) {
+        // Only act on theme upgrades targeting our theme
+        if (
+            ! isset( $hook_extra['theme'] ) ||
+            $hook_extra['theme'] !== $this->theme_slug
+        ) {
+            return $source;
+        }
+
+        $correct_source = trailingslashit( $remote_source ) . $this->theme_slug . '/';
+
+        // If the extracted folder is already named correctly, do nothing
+        if ( $source === $correct_source ) {
+            return $source;
+        }
+
+        global $wp_filesystem;
+        if ( ! $wp_filesystem->move( $source, $correct_source ) ) {
+            return new WP_Error(
+                'queerdispatch_rename_failed',
+                sprintf(
+                    /* translators: 1: source path, 2: target path */
+                    __( 'Could not rename %1$s to %2$s during theme update.', 'queerdispatch' ),
+                    $source,
+                    $correct_source
+                )
+            );
+        }
+
+        return $correct_source;
     }
 
     /**
