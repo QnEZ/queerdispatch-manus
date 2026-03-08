@@ -90,7 +90,7 @@ function queerdispatch_scripts() {
     // Google Fonts
     wp_enqueue_style(
         'queerdispatch-google-fonts',
-        'https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&family=Josefin+Sans:wght@300;400;700&family=Special+Elite&family=Raleway:wght@300;400;700&family=Orbitron:wght@400;700;900&family=Quicksand:wght@300;400;700&family=Abril+Fatface&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap',
+        'https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&family=Josefin+Sans:wght@300;400;700&family=Special+Elite&family=Raleway:wght@300;400;700&family=Orbitron:wght@400;700;900&family=Quicksand:wght@300;400;700&family=Abril+Fatface&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Share+Tech&display=swap',
         array(),
         null
     );
