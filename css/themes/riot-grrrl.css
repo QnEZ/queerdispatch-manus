@@ -13,7 +13,7 @@ body[data-style="riot-grrrl"], body.style-riot-grrrl {
     --color-bg-secondary: #1a0a14;
     --color-bg-card: #110810;
     --color-text: #f8f0f4;
-    --color-text-muted: #a08090;
+    --color-text-muted: #c0a0b0;
     --color-accent: #ff0080;
     --color-accent-hover: #ff40a0;
     --color-accent-secondary: #ff80c0;
@@ -23,7 +23,7 @@ body[data-style="riot-grrrl"], body.style-riot-grrrl {
     --color-nav-bg: #1a0010;
     --color-nav-text: #ff0080;
     --color-footer-bg: #0a0808;
-    --color-footer-text: #a08090;
+    --color-footer-text: #b09098;
     --color-tag-bg: #ff0080;
     --color-tag-text: #ffffff;
     --color-button-bg: #ff0080;
@@ -151,8 +151,10 @@ body[data-style="riot-grrrl"] .nav-menu a , body.style-riot-grrrl .nav-menu a  {
     border-right: 1px solid #2a1020;
 }
 
-body[data-style="riot-grrrl"], body.style-riot-grrrl .nav-menu a:hover,
-body[data-style="riot-grrrl"] .nav-menu .current-menu-item > a , body.style-riot-grrrl .nav-menu .current-menu-item > a  {
+body[data-style="riot-grrrl"] .nav-menu a:hover,
+body.style-riot-grrrl .nav-menu a:hover,
+body[data-style="riot-grrrl"] .nav-menu .current-menu-item > a,
+body.style-riot-grrrl .nav-menu .current-menu-item > a {
     background: #ff0080;
     color: #ffffff;
 }
@@ -275,11 +277,22 @@ body[data-style="riot-grrrl"] ::-webkit-scrollbar, body.style-riot-grrrl ::-webk
 body[data-style="riot-grrrl"] ::-webkit-scrollbar-track, body.style-riot-grrrl ::-webkit-scrollbar-track { background: #0d0d0d; }
 body[data-style="riot-grrrl"] ::-webkit-scrollbar-thumb, body.style-riot-grrrl ::-webkit-scrollbar-thumb { background: #ff0080; border-radius: 0; }
 
-/* Content links */
+/* Content links — brighter pink for better legibility */
 body[data-style="riot-grrrl"] .single-post-content a , body.style-riot-grrrl .single-post-content a  {
-    color: #ff0080;
+    color: #ff4da6;
     text-decoration: underline;
     text-decoration-style: wavy;
+}
+body[data-style="riot-grrrl"] .single-post-content a:hover,
+body.style-riot-grrrl .single-post-content a:hover {
+    color: #ff80c0;
+}
+
+/* Single post body text — improved line-height */
+body[data-style="riot-grrrl"] .single-post-content,
+body.style-riot-grrrl .single-post-content {
+    font-size: 1.05rem;
+    line-height: 1.85;
 }
 
 /* Punk asterisk decoration */
@@ -301,8 +314,10 @@ body[data-style="riot-grrrl"] .page-numbers , body.style-riot-grrrl .page-number
     box-shadow: 2px 2px 0px #ff0080;
 }
 
-body[data-style="riot-grrrl"], body.style-riot-grrrl .page-numbers:hover,
-body[data-style="riot-grrrl"] .page-numbers.current , body.style-riot-grrrl .page-numbers.current  {
+body[data-style="riot-grrrl"] .page-numbers:hover,
+body.style-riot-grrrl .page-numbers:hover,
+body[data-style="riot-grrrl"] .page-numbers.current,
+body.style-riot-grrrl .page-numbers.current {
     background: #ff0080;
     border-color: #ff0080;
     box-shadow: 3px 3px 0px rgba(255,0,128,0.4);

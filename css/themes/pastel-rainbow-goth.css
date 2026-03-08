@@ -12,7 +12,7 @@ body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth {
     --color-bg-secondary: #160e20;
     --color-bg-card: #120c1c;
     --color-text: #f0e8f8;
-    --color-text-muted: #9a88b0;
+    --color-text-muted: #c0aed8;
     --color-accent: #ff9de2;
     --color-accent-hover: #ffb8ec;
     --color-accent-secondary: #b8f0ff;
@@ -22,7 +22,7 @@ body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth {
     --color-nav-bg: #0a0810;
     --color-nav-text: #ff9de2;
     --color-footer-bg: #080610;
-    --color-footer-text: #9a88b0;
+    --color-footer-text: #b09ac8;
     --color-tag-bg: #3d1a5a;
     --color-tag-text: #ff9de2;
     --color-button-bg: #c060e0;
@@ -170,8 +170,10 @@ body[data-style="pastel-rainbow-goth"] .nav-menu a , body.style-pastel-rainbow-g
     font-weight: 700;
 }
 
-body[data-style="pastel-rainbow-goth"], body.style-pastel-rainbow-goth .nav-menu a:hover,
-body[data-style="pastel-rainbow-goth"] .nav-menu .current-menu-item > a , body.style-pastel-rainbow-goth .nav-menu .current-menu-item > a  {
+body[data-style="pastel-rainbow-goth"] .nav-menu a:hover,
+body.style-pastel-rainbow-goth .nav-menu a:hover,
+body[data-style="pastel-rainbow-goth"] .nav-menu .current-menu-item > a,
+body.style-pastel-rainbow-goth .nav-menu .current-menu-item > a {
     background: linear-gradient(135deg, #c060e0, #ff9de2);
     color: #ffffff;
 }
@@ -287,6 +289,26 @@ body[data-style="pastel-rainbow-goth"] input[type="email"], body.style-pastel-ra
 body[data-style="pastel-rainbow-goth"] input[type="search"], body.style-pastel-rainbow-goth input[type="search"],
 body[data-style="pastel-rainbow-goth"] input[type="text"], body.style-pastel-rainbow-goth input[type="text"],
 body[data-style="pastel-rainbow-goth"] textarea , body.style-pastel-rainbow-goth textarea  { border-radius: 24px; }
+
+/* Single post content links — bright pastel pink, clearly visible on dark bg */
+body[data-style="pastel-rainbow-goth"] .single-post-content a,
+body.style-pastel-rainbow-goth .single-post-content a {
+    color: #ff9de2;
+    text-decoration: underline;
+    text-decoration-color: rgba(255,157,226,0.5);
+}
+body[data-style="pastel-rainbow-goth"] .single-post-content a:hover,
+body.style-pastel-rainbow-goth .single-post-content a:hover {
+    color: #ffb8ec;
+    text-shadow: 0 0 8px rgba(255,157,226,0.4);
+}
+
+/* Single post body text — improved line-height */
+body[data-style="pastel-rainbow-goth"] .single-post-content,
+body.style-pastel-rainbow-goth .single-post-content {
+    font-size: 1.05rem;
+    line-height: 1.85;
+}
 
 /* Pagination */
 body[data-style="pastel-rainbow-goth"] .page-numbers , body.style-pastel-rainbow-goth .page-numbers  { border-radius: 50%; }

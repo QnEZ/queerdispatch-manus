@@ -14,7 +14,7 @@ body[data-style="goth"], body.style-goth {
     --color-bg-secondary: #0f0f1a;
     --color-bg-card: #0d0d18;
     --color-text: #d4c8e8;
-    --color-text-muted: #7a6e8a;
+    --color-text-muted: #a090b8;
     --color-accent: #8b1a4a;
     --color-accent-hover: #c02060;
     --color-accent-secondary: #4a0e6b;
@@ -24,7 +24,7 @@ body[data-style="goth"], body.style-goth {
     --color-nav-bg: #0a0a14;
     --color-nav-text: #c8b8e8;
     --color-footer-bg: #050508;
-    --color-footer-text: #7a6e8a;
+    --color-footer-text: #9080a8;
     --color-tag-bg: #4a0e6b;
     --color-tag-text: #e8ddf5;
     --color-button-bg: #8b1a4a;
@@ -160,8 +160,10 @@ body[data-style="goth"] .nav-menu a , body.style-goth .nav-menu a  {
     text-transform: uppercase;
 }
 
-body[data-style="goth"], body.style-goth .nav-menu a:hover,
-body[data-style="goth"] .nav-menu .current-menu-item > a , body.style-goth .nav-menu .current-menu-item > a  {
+body[data-style="goth"] .nav-menu a:hover,
+body.style-goth .nav-menu a:hover,
+body[data-style="goth"] .nav-menu .current-menu-item > a,
+body.style-goth .nav-menu .current-menu-item > a {
     background: linear-gradient(180deg, #4a0e6b, #8b1a4a);
     color: #f0e8ff;
 }
@@ -263,9 +265,31 @@ body[data-style="goth"] ::-webkit-scrollbar-thumb:hover, body.style-goth ::-webk
 /* Glow effect on hover for links */
 body[data-style="goth"] a:hover , body.style-goth a:hover  { text-shadow: 0 0 8px rgba(139,26,74,0.6); }
 
+/* Single post content links — bright crimson rose for legibility on dark bg */
+body[data-style="goth"] .single-post-content a,
+body.style-goth .single-post-content a {
+    color: #e05080;
+    text-decoration: underline;
+    text-decoration-color: rgba(224,80,128,0.5);
+}
+body[data-style="goth"] .single-post-content a:hover,
+body.style-goth .single-post-content a:hover {
+    color: #f070a0;
+    text-shadow: 0 0 8px rgba(224,80,128,0.4);
+}
+
+/* Single post body text — improved line-height for readability */
+body[data-style="goth"] .single-post-content,
+body.style-goth .single-post-content {
+    font-size: 1.05rem;
+    line-height: 1.85;
+}
+
 /* Post meta separator */
-body[data-style="goth"], body.style-goth .card-meta .separator,
-body[data-style="goth"] .single-post-meta .separator , body.style-goth .single-post-meta .separator  { color: #8b1a4a; }
+body[data-style="goth"] .card-meta .separator,
+body.style-goth .card-meta .separator,
+body[data-style="goth"] .single-post-meta .separator,
+body.style-goth .single-post-meta .separator { color: #8b1a4a; }
 
 /* Ornate horizontal rules */
 body[data-style="goth"] hr , body.style-goth hr  {
