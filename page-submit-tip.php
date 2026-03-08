@@ -186,6 +186,30 @@ $categories = array(
                     </form>
 
                     <!-- ======================================================
+                         SIGNAL CONTACT OPTION
+                    ====================================================== -->
+                    <aside class="tip-signal-note">
+                        <div class="tip-signal-header">
+                            <span class="tip-signal-icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.557 4.12 1.529 5.847L.057 23.07a.75.75 0 0 0 .932.908l5.056-1.701A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 1.5c5.79 0 10.5 4.71 10.5 10.5S17.79 22.5 12 22.5a10.45 10.45 0 0 1-5.22-1.393l-.318-.19-3.29 1.107 1.003-3.373-.207-.33A10.45 10.45 0 0 1 1.5 12C1.5 6.21 6.21 1.5 12 1.5z"/></svg>
+                            </span>
+                            <h3><?php esc_html_e( 'Need stronger anonymity? Contact us on Signal.', 'queerdispatch' ); ?></h3>
+                        </div>
+                        <p><?php esc_html_e( 'If you are a whistleblower, a source at risk of retaliation, or simply prefer end-to-end encrypted communication, Signal is the safest way to reach us. Signal does not log metadata and messages can be set to disappear automatically.', 'queerdispatch' ); ?></p>
+                        <div class="tip-signal-contacts">
+                            <div class="tip-signal-contact">
+                                <span class="tip-signal-contact-label"><?php esc_html_e( 'Phone number', 'queerdispatch' ); ?></span>
+                                <a href="https://signal.me/#p/+16093343796" class="tip-signal-contact-value" target="_blank" rel="noopener noreferrer">+1 (609) 334-3796</a>
+                            </div>
+                            <div class="tip-signal-contact">
+                                <span class="tip-signal-contact-label"><?php esc_html_e( 'Username', 'queerdispatch' ); ?></span>
+                                <a href="https://signal.me/#u/KPP.78" class="tip-signal-contact-value" target="_blank" rel="noopener noreferrer">KPP.78</a>
+                            </div>
+                        </div>
+                        <p class="tip-signal-hint"><?php esc_html_e( 'To contact us via username without revealing your phone number: open Signal, tap the compose icon, tap "Find by username", and enter KPP.78. You can also scan the link above on a device with Signal installed.', 'queerdispatch' ); ?></p>
+                    </aside>
+
+                    <!-- ======================================================
                          PRIVACY NOTE
                     ====================================================== -->
                     <aside class="tip-privacy-note">
@@ -381,6 +405,78 @@ $categories = array(
         width: 100%;
         text-align: center;
     }
+}
+
+/* Signal contact section */
+.tip-signal-note {
+    max-width: 680px;
+    padding: 1.4rem 1.6rem;
+    border: 2px solid #3a76f0;
+    border-radius: 6px;
+    background: color-mix(in srgb, #3a76f0 8%, var(--color-bg));
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+.tip-signal-header {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.75rem;
+}
+.tip-signal-icon {
+    color: #3a76f0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+.tip-signal-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.3;
+}
+.tip-signal-note > p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--color-text-muted, var(--color-text));
+    margin: 0 0 1rem;
+}
+.tip-signal-contacts {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.85rem;
+}
+.tip-signal-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.tip-signal-contact-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-text-muted, var(--color-text));
+}
+.tip-signal-contact-value {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #3a76f0;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+}
+.tip-signal-contact-value:hover {
+    text-decoration: underline;
+}
+.tip-signal-hint {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--color-text-muted, var(--color-text));
+    margin: 0;
+    border-top: 1px solid color-mix(in srgb, #3a76f0 25%, transparent);
+    padding-top: 0.75rem;
 }
 </style>
 
