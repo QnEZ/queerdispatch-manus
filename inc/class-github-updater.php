@@ -233,22 +233,54 @@ class QueerDispatch_GitHub_Updater {
      * @return string|WP_Error           Corrected source path, or WP_Error.
      */
     public function fix_source_dir( $source, $remote_source, $upgrader, $hook_extra ) {
-        // Only act on theme upgrades targeting our theme
-        if (
-            ! isset( $hook_extra['theme'] ) ||
-            $hook_extra['theme'] !== $this->theme_slug
-        ) {
-            return $source;
-        }
-
-        $correct_source = trailingslashit( $remote_source ) . $this->theme_slug . '/';
-
-        // If the extracted folder is already named correctly, do nothing
-        if ( $source === $correct_source ) {
-            return $source;
-        }
-
         global $wp_filesystem;
+
+        // Normalise paths — ensure both have a trailing slash.
+        $source         = trailingslashit( $source );
+        $remote_source  = trailingslashit( $remote_source );
+        $correct_source = $remote_source . $this->theme_slug . '/';
+
+        // Guard 1: Only act when this is a theme upgrade.
+        // hook_extra['theme'] is set by Theme_Upgrader; fall back to
+        // checking whether the source path lives inside remote_source
+        // and the extracted folder name looks like our theme.
+        $is_our_theme = false;
+
+        if ( isset( $hook_extra['theme'] ) && $hook_extra['theme'] === $this->theme_slug ) {
+            $is_our_theme = true;
+        } elseif ( isset( $hook_extra['type'] ) && $hook_extra['type'] === 'theme' ) {
+            // WordPress 5.5+ sets hook_extra['type'] = 'theme' for all theme upgrades.
+            // Check whether the source directory is inside our remote_source temp dir.
+            if ( strpos( $source, $remote_source ) === 0 ) {
+                $is_our_theme = true;
+            }
+        } elseif ( strpos( $source, $remote_source ) === 0 ) {
+            // Fallback: if the source is inside the remote_source temp dir,
+            // check if it contains a style.css that identifies our theme.
+            $style_css = $source . 'style.css';
+            if ( $wp_filesystem->exists( $style_css ) ) {
+                $contents = $wp_filesystem->get_contents( $style_css );
+                if ( $contents && strpos( $contents, 'Text Domain: queerdispatch' ) !== false ) {
+                    $is_our_theme = true;
+                }
+            }
+        }
+
+        if ( ! $is_our_theme ) {
+            return $source;
+        }
+
+        // Guard 2: If the extracted folder is already named correctly, do nothing.
+        if ( untrailingslashit( $source ) === untrailingslashit( $correct_source ) ) {
+            return $source;
+        }
+
+        // Guard 3: If the correct target already exists (e.g. a previous failed
+        // attempt left it behind), remove it first so the move succeeds.
+        if ( $wp_filesystem->is_dir( $correct_source ) ) {
+            $wp_filesystem->delete( $correct_source, true );
+        }
+
         if ( ! $wp_filesystem->move( $source, $correct_source ) ) {
             return new WP_Error(
                 'queerdispatch_rename_failed',
