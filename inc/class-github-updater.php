@@ -48,7 +48,7 @@ class QueerDispatch_GitHub_Updater {
      * Default: 12 hours.
      * @var int
      */
-    private $cache_ttl = 43200;
+    private $cache_ttl = 3600;
 
     /**
      * Constructor — registers all WordPress hooks.
@@ -60,6 +60,7 @@ class QueerDispatch_GitHub_Updater {
         add_action( 'upgrader_process_complete',             array( $this, 'clear_cache' ), 10, 2 );
         add_action( 'admin_notices',                         array( $this, 'maybe_show_update_notice' ) );
         add_action( 'wp_ajax_queerdispatch_dismiss_update',  array( $this, 'dismiss_update_notice' ) );
+        add_action( 'admin_init',                            array( $this, 'maybe_clear_stale_cache' ) );
     }
 
     // ----------------------------------------------------------------
@@ -308,6 +309,26 @@ class QueerDispatch_GitHub_Updater {
             $options['type'] === 'theme' &&
             in_array( $this->theme_slug, (array) $options['themes'], true )
         ) {
+            delete_transient( $this->transient_key );
+        }
+    }
+
+    /**
+     * Clear stale cache on admin page loads if the cached version doesn't match
+     * the installed version. This ensures fresh version checks after manual updates.
+     */
+    public function maybe_clear_stale_cache() {
+        $cached = get_transient( $this->transient_key );
+        if ( $cached === false ) {
+            return; // No cache, nothing to do
+        }
+
+        $current_version = wp_get_theme( $this->theme_slug )->get( 'Version' );
+        $latest_version  = $this->parse_version( $cached->tag_name );
+
+        // If the installed version is >= the cached latest version,
+        // the cache is stale (we've already updated). Clear it.
+        if ( version_compare( $current_version, $latest_version, '>=' ) ) {
             delete_transient( $this->transient_key );
         }
     }
