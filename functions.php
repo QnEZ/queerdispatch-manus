@@ -446,6 +446,10 @@ function queerdispatch_style_switcher() {
                     <span>
                         <span class="style-name"><?php echo esc_html( $style['name'] ); ?></span>
                         <span class="style-desc"><?php echo esc_html( $style['desc'] ); ?></span>
+                        <span class="style-palette" aria-label="Colour palette">
+                            <span class="palette-dot" style="background: <?php echo esc_attr( $style['colors'][0] ); ?>;" title="Accent"></span>
+                            <span class="palette-dot" style="background: <?php echo esc_attr( $style['colors'][1] ); ?>;" title="Background"></span>
+                        </span>
                     </span>
                 </button>
             <?php endforeach; ?>
