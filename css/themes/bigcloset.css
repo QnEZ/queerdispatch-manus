@@ -1,0 +1,444 @@
+/*
+ * QueerDispatch — BigCloset TopShelf Style
+ * Inspired by bigclosetr.us/topshelf — the long-running trans fiction community
+ * Warm cream backgrounds, deep rose/burgundy accents, classic serif typography,
+ * soft feminine warmth, romance novel aesthetic, welcoming community feel
+ *
+ * WCAG AA COMPLIANCE:
+ * - Body text #2a1a1a on #fdf8f2 — ~14:1 contrast ✓
+ * - Links #8b1a3a on #fdf8f2 — ~6.8:1 contrast ✓
+ * - Muted text #6b4a4a on #fdf8f2 — ~5.2:1 contrast ✓
+ * - Nav text #2a1a1a on #f0e0e8 — ~11:1 contrast ✓
+ * - Button text #ffffff on #8b1a3a — ~7.1:1 contrast ✓
+ * - Footer text #3a1a1a on #ead8e0 — ~9.2:1 contrast ✓
+ *
+ * COLOR PALETTE:
+ * Background:   #fdf8f2 (warm ivory — like aged paperback pages)
+ * Secondary bg: #f5ece8 (blush cream)
+ * Card bg:      #fefaf6 (near white with warmth)
+ * Text:         #2a1a1a (near-black with warm undertone)
+ * Muted text:   #6b4a4a (warm dark rose-grey)
+ * Accent:       #8b1a3a (deep burgundy rose — BC's signature colour)
+ * Accent hover: #6b0a2a (darker burgundy)
+ * Secondary:    #c06080 (medium rose — softer accent)
+ * Border:       #e0ccd4 (soft rose-grey)
+ * Header bg:    #f0e0e8 (pale rose)
+ * Footer bg:    #ead8e0 (dusty rose)
+ *
+ * TYPOGRAPHY:
+ * Headings: Playfair Display (elegant serif — romance novel feel)
+ * Body:     Georgia (classic readable serif — matches BC's traditional feel)
+ * Nav:      Lato (clean sans-serif for navigation clarity)
+ */
+
+body[data-style="bigcloset"], body.style-bigcloset {
+    --color-bg: #fdf8f2;
+    --color-bg-secondary: #f5ece8;
+    --color-bg-card: #fefaf6;
+    --color-text: #2a1a1a;
+    --color-text-muted: #6b4a4a;
+    --color-accent: #8b1a3a;
+    --color-accent-hover: #6b0a2a;
+    --color-accent-secondary: #c06080;
+    --color-border: #e0ccd4;
+    --color-header-bg: #f0e0e8;
+    --color-header-text: #2a1a1a;
+    --color-nav-bg: #e8d0d8;
+    --color-nav-text: #2a1a1a;
+    --color-footer-bg: #ead8e0;
+    --color-footer-text: #3a1a1a;
+    --color-tag-bg: #8b1a3a;
+    --color-tag-text: #ffffff;
+    --color-button-bg: #8b1a3a;
+    --color-button-text: #ffffff;
+    --color-button-hover: #6b0a2a;
+    --font-heading: 'Playfair Display', 'Georgia', serif;
+    --font-body: 'Georgia', 'Times New Roman', serif;
+    --font-nav: 'Lato', 'Arial', sans-serif;
+    --border-radius: 4px;
+    --card-shadow: 0 2px 12px rgba(139,26,58,0.10), 0 0 0 1px rgba(139,26,58,0.06);
+    --header-border: 2px solid #c06080;
+    --section-divider: 1px solid #e0ccd4;
+}
+
+/* Warm ivory paper background with subtle texture */
+body[data-style="bigcloset"], body.style-bigcloset {
+    background-color: #fdf8f2;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Ccircle cx='30' cy='30' r='1' fill='%238b1a3a' opacity='0.04'/%3E%3Ccircle cx='100' cy='60' r='1.5' fill='%23c06080' opacity='0.03'/%3E%3Ccircle cx='160' cy='100' r='1' fill='%238b1a3a' opacity='0.03'/%3E%3Ccircle cx='60' cy='150' r='1' fill='%23c06080' opacity='0.04'/%3E%3Ccircle cx='140' cy='170' r='1.5' fill='%238b1a3a' opacity='0.03'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* Section titles — elegant serif with rose underline */
+body[data-style="bigcloset"] .section-title, body.style-bigcloset .section-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 700;
+    font-style: italic;
+    color: #2a1a1a;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+body[data-style="bigcloset"] .section-title::before, body.style-bigcloset .section-title::before {
+    content: '❧';
+    margin-right: 10px;
+    font-size: 0.9em;
+    color: #8b1a3a;
+    background: none;
+    width: auto;
+    height: auto;
+    display: inline;
+    font-style: normal;
+}
+
+body[data-style="bigcloset"] .section-title::after, body.style-bigcloset .section-title::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: linear-gradient(90deg, #8b1a3a, #c06080, #8b1a3a);
+    margin-top: 8px;
+    border-radius: 2px;
+    opacity: 0.6;
+}
+
+body[data-style="bigcloset"] .section-header, body.style-bigcloset .section-header {
+    border-bottom: none;
+}
+
+/* Cards — classic book-like feel */
+body[data-style="bigcloset"] .article-card, body.style-bigcloset .article-card {
+    border: 1px solid #e0ccd4;
+    border-radius: 4px;
+    background: #fefaf6;
+    box-shadow: 0 2px 12px rgba(139,26,58,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+body[data-style="bigcloset"] .article-card:hover, body.style-bigcloset .article-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(139,26,58,0.16);
+    border-color: #c06080;
+}
+
+/* Soft warm image treatment */
+body[data-style="bigcloset"] .card-thumbnail img, body.style-bigcloset .card-thumbnail img {
+    filter: saturate(0.9) sepia(0.05);
+    transition: filter 0.3s ease;
+}
+
+body[data-style="bigcloset"] .article-card:hover .card-thumbnail img, body.style-bigcloset .article-card:hover .card-thumbnail img {
+    filter: saturate(1) sepia(0);
+}
+
+/* Hero section */
+body[data-style="bigcloset"] .hero-section, body.style-bigcloset .hero-section {
+    border: 1px solid #e0ccd4;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(139,26,58,0.12);
+}
+
+body[data-style="bigcloset"] .hero-content, body.style-bigcloset .hero-content {
+    background: linear-gradient(135deg, #f5ece8, #fdf8f2);
+    border-left: 4px solid #8b1a3a;
+}
+
+body[data-style="bigcloset"] .hero-title, body.style-bigcloset .hero-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-style: italic;
+    color: #2a1a1a;
+    text-shadow: none;
+    letter-spacing: 0;
+}
+
+/* Site title */
+body[data-style="bigcloset"] .site-title, body.style-bigcloset .site-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 700;
+    font-style: italic;
+    color: #8b1a3a;
+    letter-spacing: 0.5px;
+    font-size: 1.6rem;
+}
+
+/* Navigation */
+body[data-style="bigcloset"] .site-header, body.style-bigcloset .site-header {
+    background: #f0e0e8;
+    border-bottom: 2px solid #c06080;
+}
+
+body[data-style="bigcloset"] .main-navigation, body.style-bigcloset .main-navigation {
+    background: #e8d0d8;
+    border-bottom: 1px solid #d8b8c4;
+}
+
+body[data-style="bigcloset"] .nav-menu a, body.style-bigcloset .nav-menu a {
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+    color: #2a1a1a;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+body[data-style="bigcloset"] .nav-menu a:hover, body.style-bigcloset .nav-menu a:hover,
+body[data-style="bigcloset"] .nav-menu .current-menu-item > a, body.style-bigcloset .nav-menu .current-menu-item > a {
+    background: #8b1a3a;
+    color: #ffffff;
+}
+
+/* Tags — rose badges */
+body[data-style="bigcloset"] .tag, body.style-bigcloset .tag {
+    background: #8b1a3a;
+    color: #ffffff;
+    border-radius: 2px;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    border: none;
+    padding: 3px 10px;
+}
+
+body[data-style="bigcloset"] .tag:hover, body.style-bigcloset .tag:hover {
+    background: #6b0a2a;
+    color: #ffffff;
+}
+
+/* Widget titles */
+body[data-style="bigcloset"] .widget-title, body.style-bigcloset .widget-title {
+    background: #8b1a3a;
+    font-family: 'Lato', 'Arial', sans-serif;
+    letter-spacing: 2px;
+    border-radius: 0;
+    color: #ffffff;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+/* Sidebar */
+body[data-style="bigcloset"] .widget, body.style-bigcloset .widget {
+    border: 1px solid #e0ccd4;
+    border-radius: 4px;
+    background: #fefaf6;
+}
+
+/* Footer */
+body[data-style="bigcloset"] .site-footer, body.style-bigcloset .site-footer {
+    background: #ead8e0;
+    border-top: 2px solid #c06080;
+}
+
+body[data-style="bigcloset"] .footer-widget-title, body.style-bigcloset .footer-widget-title {
+    /* Deep burgundy on dusty rose footer bg (#ead8e0) — ~6.8:1 contrast */
+    color: #6b0a2a;
+    border-bottom-color: #d0b0bc;
+}
+
+body[data-style="bigcloset"] .footer-links a, body.style-bigcloset .footer-links a {
+    color: #5a0a1a;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+body[data-style="bigcloset"] .footer-links a:hover, body.style-bigcloset .footer-links a:hover {
+    color: #8b1a3a;
+}
+
+/* Blockquote — romantic novel style */
+body[data-style="bigcloset"] .single-post-content blockquote, body.style-bigcloset .single-post-content blockquote {
+    border-left: 4px solid #c06080;
+    background: #f5ece8;
+    font-style: italic;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    color: #4a2a2a;
+    border-radius: 0 4px 4px 0;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* Buttons */
+body[data-style="bigcloset"] .btn, body.style-bigcloset .btn {
+    background: #8b1a3a;
+    border: none;
+    font-family: 'Lato', 'Arial', sans-serif;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(139,26,58,0.25);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+body[data-style="bigcloset"] .btn:hover, body.style-bigcloset .btn:hover {
+    background: #6b0a2a;
+    box-shadow: 0 4px 16px rgba(139,26,58,0.35);
+}
+
+/* Breaking news */
+body[data-style="bigcloset"] .breaking-news-bar, body.style-bigcloset .breaking-news-bar {
+    background: linear-gradient(90deg, #8b1a3a, #c06080, #8b1a3a);
+}
+
+/* Read more */
+body[data-style="bigcloset"] .read-more, body.style-bigcloset .read-more {
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: #8b1a3a;
+    text-transform: uppercase;
+}
+
+body[data-style="bigcloset"] .read-more:hover, body.style-bigcloset .read-more:hover {
+    color: #6b0a2a;
+}
+
+body[data-style="bigcloset"] .read-more::after, body.style-bigcloset .read-more::after {
+    content: ' ❧';
+    font-style: normal;
+}
+
+/* List items */
+body[data-style="bigcloset"] .article-list-item, body.style-bigcloset .article-list-item {
+    border-radius: 4px;
+    border: 1px solid #e0ccd4;
+    background: #fefaf6;
+}
+
+body[data-style="bigcloset"] .article-list-item:hover, body.style-bigcloset .article-list-item:hover {
+    border-color: #8b1a3a;
+    transform: translateX(4px);
+}
+
+/* Input fields */
+body[data-style="bigcloset"] input[type="email"], body.style-bigcloset input[type="email"],
+body[data-style="bigcloset"] input[type="search"], body.style-bigcloset input[type="search"],
+body[data-style="bigcloset"] input[type="text"], body.style-bigcloset input[type="text"],
+body[data-style="bigcloset"] textarea, body.style-bigcloset textarea {
+    border-radius: 2px;
+    background: #fefaf6;
+    border-color: #e0ccd4;
+    color: #2a1a1a;
+    font-family: 'Georgia', serif;
+}
+
+body[data-style="bigcloset"] input[type="email"]:focus, body.style-bigcloset input[type="email"]:focus,
+body[data-style="bigcloset"] input[type="search"]:focus, body.style-bigcloset input[type="search"]:focus,
+body[data-style="bigcloset"] input[type="text"]:focus, body.style-bigcloset input[type="text"]:focus,
+body[data-style="bigcloset"] textarea:focus, body.style-bigcloset textarea:focus {
+    border-color: #8b1a3a;
+    box-shadow: 0 0 0 3px rgba(139,26,58,0.15);
+    outline: none;
+}
+
+/* Pagination */
+body[data-style="bigcloset"] .pagination a, body.style-bigcloset .pagination a,
+body[data-style="bigcloset"] .page-numbers, body.style-bigcloset .page-numbers {
+    border-color: #e0ccd4;
+    color: #2a1a1a;
+    font-family: 'Lato', sans-serif;
+}
+
+body[data-style="bigcloset"] .pagination a:hover, body.style-bigcloset .pagination a:hover,
+body[data-style="bigcloset"] .page-numbers.current, body.style-bigcloset .page-numbers.current {
+    background: #8b1a3a;
+    border-color: #8b1a3a;
+    color: #ffffff;
+}
+
+/* Single post content — article readability */
+body[data-style="bigcloset"] .single-post-content, body.style-bigcloset .single-post-content {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #2a1a1a;
+}
+
+body[data-style="bigcloset"] .single-post-content p, body.style-bigcloset .single-post-content p {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #2a1a1a;
+    margin-bottom: 1.4em;
+}
+
+/* Article links — deep burgundy on ivory (#8b1a3a on #fdf8f2 = ~6.8:1) */
+body[data-style="bigcloset"] .single-post-content a, body.style-bigcloset .single-post-content a {
+    color: #8b1a3a;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(139,26,58,0.4);
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+body[data-style="bigcloset"] .single-post-content a:hover, body.style-bigcloset .single-post-content a:hover {
+    color: #6b0a2a;
+    text-decoration-color: #6b0a2a;
+}
+
+/* Article headings */
+body[data-style="bigcloset"] .single-post-content h2, body.style-bigcloset .single-post-content h2,
+body[data-style="bigcloset"] .single-post-content h3, body.style-bigcloset .single-post-content h3,
+body[data-style="bigcloset"] .single-post-content h4, body.style-bigcloset .single-post-content h4 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-style: italic;
+    color: #2a1a1a;
+    margin-top: 2em;
+    margin-bottom: 0.6em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #e0ccd4;
+}
+
+/* Post title */
+body[data-style="bigcloset"] .single-post-title, body.style-bigcloset .single-post-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-style: italic;
+    color: #2a1a1a;
+    font-size: 2.2rem;
+    line-height: 1.3;
+}
+
+/* Author byline */
+body[data-style="bigcloset"] .post-author, body.style-bigcloset .post-author {
+    color: #8b1a3a;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* Card title links */
+body[data-style="bigcloset"] .card-title a, body.style-bigcloset .card-title a {
+    color: #2a1a1a;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-style: italic;
+}
+
+body[data-style="bigcloset"] .card-title a:hover, body.style-bigcloset .card-title a:hover {
+    color: #8b1a3a;
+}
+
+/* Card meta */
+body[data-style="bigcloset"] .card-meta, body.style-bigcloset .card-meta {
+    color: #6b4a4a;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+}
+
+body[data-style="bigcloset"] .card-meta .separator, body.style-bigcloset .card-meta .separator {
+    color: #c06080;
+}
+
+/* Scrollbar */
+body[data-style="bigcloset"] ::-webkit-scrollbar-track, body.style-bigcloset ::-webkit-scrollbar-track {
+    background: #f5ece8;
+}
+
+body[data-style="bigcloset"] ::-webkit-scrollbar-thumb, body.style-bigcloset ::-webkit-scrollbar-thumb {
+    background: #c06080;
+    border-radius: 2px;
+}
+
+body[data-style="bigcloset"] ::-webkit-scrollbar-thumb:hover, body.style-bigcloset ::-webkit-scrollbar-thumb:hover {
+    background: #8b1a3a;
+}

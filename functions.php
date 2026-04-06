@@ -3,7 +3,7 @@
  * QueerDispatch Theme Functions
  *
  * @package QueerDispatch
- * @version 1.2.2
+ * @version 1.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -222,6 +222,12 @@ function queerdispatch_get_styles() {
             'desc'   => 'Hot pink, feminist punk',
             'emoji'  => '🎸',
             'colors' => array( '#ff0080', '#0d0d0d' ),
+        ),
+        'bigcloset'          => array(
+            'name'   => 'BigCloset TopShelf',
+            'desc'   => 'Warm ivory, rose & burgundy',
+            'emoji'  => '📚',
+            'colors' => array( '#8b1a3a', '#fdf8f2' ),
         ),
     );
 }
