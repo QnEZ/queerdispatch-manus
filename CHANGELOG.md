@@ -7,6 +7,14 @@ Versions are numbered `MAJOR.MINOR.PATCH` and releases are listed in reverse chr
 
 ---
 
+## [1.5.1] — 2026-04-06
+
+### Fixed
+
+- **BigCloset TopShelf style switcher** — Clicking BigCloset TopShelf was silently falling back to Anarchist. Root cause: the `bigcloset` key was missing from the `styles{}` object in `style-switcher.js`. The `applyStyle()` function validates the requested style against this object and falls back to `DEFAULT_STYLE` (`anarchist`) if the key is not found. Added `bigcloset` entry to the styles object in both `js/style-switcher.js` and `theme/js/style-switcher.js`.
+
+---
+
 ## [1.5.0] — 2026-04-06
 
 ### Added
@@ -237,6 +245,7 @@ All styles now have `line-height: 1.85` on article body text. All 7 malformed se
 
 ---
 
+[1.5.1]: https://github.com/QnEZ/queerdispatch-manus/releases/tag/v1.5.1
 [1.5.0]: https://github.com/QnEZ/queerdispatch-manus/releases/tag/v1.5.0
 [1.4.2]: https://github.com/QnEZ/queerdispatch-manus/releases/tag/v1.4.2
 [1.4.1]: https://github.com/QnEZ/queerdispatch-manus/releases/tag/v1.4.1

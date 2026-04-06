@@ -4,7 +4,7 @@ Tags: news, magazine, lgbtq, accessibility, custom-colors, custom-logo, featured
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 1.5.0
+Stable tag: 1.5.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -119,6 +119,9 @@ Yes. The entire theme — design, code, debugging, accessibility auditing, and d
 6. The tip submission page with Signal contact section.
 
 == Changelog ==
+
+= 1.5.1 — 2026-04-06 =
+* Fixed BigCloset TopShelf style switcher falling back to Anarchist. The 'bigcloset' key was missing from the styles{} validation object in style-switcher.js, causing applyStyle() to silently use the default style instead.
 
 = 1.5.0 — 2026-04-06 =
 * Added BigCloset TopShelf style — 8th visual style inspired by bigclosetr.us/topshelf, the long-running trans fiction community. Warm ivory background (#fdf8f2), deep burgundy rose accent (#8b1a3a), Playfair Display italic headings, Georgia serif body text, fleuron (❧) decorative markers. All colours verified at WCAG AA (≥4.5:1).
