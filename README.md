@@ -1,8 +1,8 @@
 # QueerDispatch WordPress Theme
 
-**Version:** 1.3.2 | **License:** GPL v2 or later | **Requires:** WordPress 6.0+, PHP 8.0+
+**Version:** 1.4.2 | **License:** GPL v2 or later | **Requires:** WordPress 6.0+, PHP 8.0+
 
-> **Built with [Manus AI](https://manus.im)** — This theme was designed, coded, debugged, and documented entirely through an AI-assisted development workflow using Manus, an autonomous general AI agent. Every style, feature, and fix from v1.0.0 through v1.3.2 was produced in collaboration with Manus.
+> **Built with [Manus AI](https://manus.im)** — This theme was designed, coded, debugged, and documented entirely through an AI-assisted development workflow using Manus, an autonomous general AI agent. Every style, feature, and fix from v1.0.0 through v1.4.2 was produced in collaboration with Manus.
 
 Independent LGBTQIA2S+ news and community theme with **7 switchable aesthetic styles**, a built-in tip submission system, and WCAG 2.1 AA compliant contrast across all styles.
 
@@ -39,7 +39,7 @@ A floating **"Style"** tab appears on the right side of every page. Visitors ope
 | **Cottagecore Queer** | Sage greens, warm cream, floral, cozy nature | `#f5f0e8` | `#8b4513` |
 | **Riot Grrrl** | Hot pink & black, feminist punk, zine energy | `#0d0d0d` | `#ff4da6` |
 
-All seven styles meet **WCAG 2.1 Level AA** contrast requirements (>=4.5:1) for body text, links, and muted text. Contrast ratios were audited and corrected in v1.2.2–v1.2.5.
+All seven styles meet **WCAG 2.1 Level AA** contrast requirements (≥4.5:1) for body text, links, and muted text. Contrast ratios were audited and corrected across v1.2.2–v1.2.5.
 
 ---
 
@@ -64,9 +64,17 @@ The theme provides a responsive magazine-style layout with a hero section, artic
 
 Navigate to **Appearance → Customize** to configure the default style for new visitors and the breaking news ticker bar (enable/disable, set ticker text with items separated by ` | `).
 
+**Reading Mode**
+
+A Reading Mode toggle button appears in the header of every single post. Clicking it switches the article body to Georgia serif with wider line-height, making long-form content easier to read regardless of the active aesthetic style. The preference is saved in `localStorage` and restored on the next visit.
+
+**Style switcher colour swatches**
+
+The style switcher dropdown shows two small coloured circles (accent and background colours) next to each style name, so visitors can preview the palette at a glance without switching.
+
 **Performance and accessibility**
 
-Emoji scripts are removed, Google Fonts are preloaded, and all seven styles use CSS custom properties for zero-JavaScript style switching. The style switcher panel is fully keyboard operable (Tab to open, arrow keys to navigate, Enter to select, Escape to close) with ARIA labels on all interactive elements. A skip-to-content link is included for screen reader users.
+Emoji scripts are removed, Google Fonts are preloaded, and all seven styles use CSS custom properties for zero-JavaScript style switching. The style switcher panel is fully keyboard operable (Tab to open, arrow keys to navigate, Enter to select, Escape to close) with ARIA labels on all interactive elements. A skip-to-content link is included for screen reader users. All seven styles meet WCAG 2.1 Level AA contrast requirements.
 
 ---
 

@@ -4,7 +4,7 @@ Theme URI: https://queerdispatch.org/
 Author: QueerDispatch Team
 Author URI: https://queerdispatch.org/
 Description: An independent LGBTQIA2S+ news & community theme with multiple switchable aesthetic styles: Anarchist, Goth, Witchy, Pastel Rainbow Goth, Cyberpunk Queer, Cottagecore Queer, and Riot Grrrl.
-Version: 1.4.1
+Version: 1.4.2
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
@@ -834,6 +834,61 @@ a:hover {
 .single-post-content a {
     color: var(--color-accent);
     text-decoration: underline;
+}
+
+/* ============================================================
+   READING MODE TOGGLE
+   ============================================================ */
+.reading-mode-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--color-border);
+}
+
+.reading-mode-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.02em;
+}
+
+.reading-mode-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.reading-mode-btn[aria-pressed="true"] {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+}
+
+/* Reading mode overrides — applied when body has .reading-mode class.
+   Uses !important to override all theme style variables. */
+body.reading-mode .single-post-content p,
+body.reading-mode .single-post-content li,
+body.reading-mode .single-post-content blockquote {
+    font-family: Georgia, 'Times New Roman', serif !important;
+    font-size: 1.05rem !important;
+    line-height: 1.9 !important;
+    letter-spacing: 0 !important;
+}
+
+body.reading-mode .single-post-content {
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ============================================================

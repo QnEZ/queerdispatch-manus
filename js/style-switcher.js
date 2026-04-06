@@ -255,3 +255,48 @@
     };
 
 })();
+
+/* ============================================================
+   READING MODE TOGGLE
+   ============================================================ */
+(function() {
+    'use strict';
+
+    var STORAGE_KEY = 'queerdispatch_reading_mode';
+
+    function applyReadingMode(active) {
+        if (active) {
+            document.body.classList.add('reading-mode');
+        } else {
+            document.body.classList.remove('reading-mode');
+        }
+        var btn = document.getElementById('reading-mode-toggle');
+        if (btn) {
+            btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+            var label = btn.querySelector('.reading-mode-label');
+            if (label) {
+                label.textContent = active ? 'Exit Reading Mode' : 'Reading Mode';
+            }
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('reading-mode-toggle');
+        if (!btn) return;
+
+        // Restore persisted preference
+        var saved = localStorage.getItem(STORAGE_KEY);
+        if (saved === 'true') {
+            applyReadingMode(true);
+        }
+
+        btn.addEventListener('click', function() {
+            var isActive = document.body.classList.contains('reading-mode');
+            var next = !isActive;
+            applyReadingMode(next);
+            try {
+                localStorage.setItem(STORAGE_KEY, next ? 'true' : 'false');
+            } catch(e) {}
+        });
+    });
+})();

@@ -4,7 +4,7 @@ Tags: news, magazine, lgbtq, accessibility, custom-colors, custom-logo, featured
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 1.3.2
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Independent LGBTQIA2S+ news and community WordPress theme with 7 switchable aest
 
 == Built with Manus AI ==
 
-This theme was designed, coded, debugged, and documented entirely through an AI-assisted development workflow using **Manus AI** (https://manus.im), an autonomous general AI agent. Every style, feature, and accessibility fix from v1.0.0 through v1.3.2 was produced in collaboration with Manus. This is believed to be one of the first publicly released WordPress themes built end-to-end with an autonomous AI agent.
+This theme was designed, coded, debugged, and documented entirely through an AI-assisted development workflow using **Manus AI** (https://manus.im), an autonomous general AI agent. Every style, feature, and accessibility fix from v1.0.0 through v1.4.2 was produced in collaboration with Manus. This is believed to be one of the first publicly released WordPress themes built end-to-end with an autonomous AI agent.
 
 == Description ==
 
@@ -34,9 +34,13 @@ All seven styles meet WCAG 2.1 Level AA contrast requirements (minimum 4.5:1 rat
 
 The theme includes a complete editorial tip submission system requiring no additional plugins. A dedicated page template provides a form with category selection, tip body, optional file attachment, and optional contact details. Submissions are stored as private posts in the WordPress database and trigger an email notification to the site admin. A Signal contact section below the form provides an encrypted alternative channel for sources who need stronger anonymity. Submitted tips are managed from the WordPress admin with colour-coded status badges, filter controls, and an admin bar badge showing unread tip count.
 
+**Reading Mode**
+
+A Reading Mode toggle button appears on every single post page. Clicking it switches the article body to a clean Georgia serif font with wider line-height, making long-form content easier to read regardless of the active aesthetic style. The preference persists in localStorage.
+
 **Other features**
 
-A configurable breaking news ticker bar, responsive magazine-style layout with hero section and article card grid, three navigation menu locations, three widget areas, custom logo support, Block Editor support with wide and full alignment, keyboard-accessible style switcher with ARIA labels, skip-to-content link, and a built-in GitHub Releases auto-updater.
+Colour swatch previews in the style switcher dropdown, configurable breaking news ticker bar, responsive magazine-style layout with hero section and article card grid, three navigation menu locations, three widget areas, custom logo support, Block Editor support with wide and full alignment, keyboard-accessible style switcher with ARIA labels, skip-to-content link, and a built-in GitHub Releases auto-updater.
 
 == Installation ==
 
@@ -115,6 +119,18 @@ Yes. The entire theme — design, code, debugging, accessibility auditing, and d
 
 == Changelog ==
 
+= 1.4.2 — 2026-04-06 =
+* Added Reading Mode toggle to single post pages. Clicking the button switches body text to Georgia serif with wider line-height. Preference persists in localStorage.
+* Added community AI feedback form to the showcase site (mailto-based, no backend required).
+* Added CONTRIBUTING.md guide covering bug reports, feature requests, pull requests, coding standards, accessibility requirements, and CSS selector rules.
+* Updated readme.txt and README.md to reflect all features added since v1.3.2.
+
+= 1.4.1 — 2026-03-25 =
+* Fixed auto-updater cache: reduced TTL from 12 hours to 1 hour and added stale cache detection on admin_init.
+
+= 1.4.0 — 2026-03-24 =
+* Added colour swatch previews to the style switcher dropdown (accent and background colours per style).
+
 = 1.3.2 — 2026-03-08 =
 * Fixed auto-updater: the upgrader_source_selection filter now uses three detection layers to identify the theme regardless of how the update was triggered, resolving the "theme is already up to date" false positive when clicking Update Now.
 * Fixed stale temp directory cleanup during updates.
@@ -152,6 +168,9 @@ Yes. The entire theme — design, code, debugging, accessibility auditing, and d
 * Initial public release with seven styles and built-in auto-updater.
 
 == Upgrade Notice ==
+
+= 1.4.2 =
+Adds Reading Mode toggle for article pages and a CONTRIBUTING.md guide. Recommended for all users.
 
 = 1.3.2 =
 Install this version manually (Appearance > Themes > Add New > Upload Theme > Replace current with uploaded). This fixes the auto-updater so all future updates will install correctly via Update Now.
