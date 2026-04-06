@@ -8,7 +8,7 @@
  *   won. The result was always Anarchist (the default).
  *
  * FIX:
- *   1. All 7 theme CSS files are now loaded simultaneously in <head> by PHP.
+ *   1. All 8 theme CSS files are now loaded simultaneously in <head> by PHP.
  *   2. Each theme file scopes ALL its rules to html[data-style="X"] { ... }
  *      which has higher specificity than :root, so it always wins.
  *   3. Switching a style only requires updating data-style on <html>.
@@ -35,7 +35,8 @@
         'pastel-rainbow-goth': { name: 'Pastel Rainbow Goth', desc: 'Kawaii-goth cotton candy',     emoji: '🌈' },
         'cyberpunk':           { name: 'Cyberpunk Queer',     desc: 'Neon glitch, digital resist',  emoji: '⚡' },
         'cottagecore':         { name: 'Cottagecore Queer',   desc: 'Cozy nature, floral warmth',   emoji: '🌿' },
-        'riot-grrrl':          { name: 'Riot Grrrl',          desc: 'Hot pink feminist punk',       emoji: '🎸' }
+        'riot-grrrl':          { name: 'Riot Grrrl',          desc: 'Hot pink feminist punk',       emoji: '🎸' },
+        'bigcloset':           { name: 'BigCloset TopShelf',  desc: 'Warm ivory, rose & burgundy',  emoji: '📚' }
     };
 
     /* ─── Cookie helpers ─────────────────────────────────────────────────── */

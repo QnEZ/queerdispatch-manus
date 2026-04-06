@@ -8,7 +8,7 @@
  *   won. The result was always Anarchist (the default).
  *
  * FIX:
- *   1. All 7 theme CSS files are now loaded simultaneously in <head> by PHP.
+ *   1. All 8 theme CSS files are now loaded simultaneously in <head> by PHP.
  *   2. Each theme file scopes ALL its rules to html[data-style="X"] { ... }
  *      which has higher specificity than :root, so it always wins.
  *   3. Switching a style only requires updating data-style on <html>.
@@ -35,7 +35,8 @@
         'pastel-rainbow-goth': { name: 'Pastel Rainbow Goth', desc: 'Kawaii-goth cotton candy',     emoji: '🌈' },
         'cyberpunk':           { name: 'Cyberpunk Queer',     desc: 'Neon glitch, digital resist',  emoji: '⚡' },
         'cottagecore':         { name: 'Cottagecore Queer',   desc: 'Cozy nature, floral warmth',   emoji: '🌿' },
-        'riot-grrrl':          { name: 'Riot Grrrl',          desc: 'Hot pink feminist punk',       emoji: '🎸' }
+        'riot-grrrl':          { name: 'Riot Grrrl',          desc: 'Hot pink feminist punk',       emoji: '🎸' },
+        'bigcloset':           { name: 'BigCloset TopShelf',  desc: 'Warm ivory, rose & burgundy',  emoji: '📚' }
     };
 
     /* ─── Cookie helpers ─────────────────────────────────────────────────── */
@@ -75,12 +76,15 @@
 
         if (document.body) {
             document.body.setAttribute('data-style', styleName);
-            // Keep body class in sync for any class-based fallbacks
-            var cls = document.body.className.split(' ').filter(function (c) {
-                return c.indexOf('style-') !== 0;
-            });
-            cls.push('style-' + styleName);
-            document.body.className = cls.join(' ').trim();
+            // Only add/remove style-* classes — never touch other WordPress body classes
+            // Remove any existing style-* class using classList to avoid stripping WP classes
+            var existingClasses = Array.prototype.slice.call(document.body.classList);
+            for (var j = 0; j < existingClasses.length; j++) {
+                if (existingClasses[j].indexOf('style-') === 0) {
+                    document.body.classList.remove(existingClasses[j]);
+                }
+            }
+            document.body.classList.add('style-' + styleName);
         }
 
         // Persist
@@ -251,4 +255,49 @@
         styles:           styles
     };
 
+})();
+
+/* ============================================================
+   READING MODE TOGGLE
+   ============================================================ */
+(function() {
+    'use strict';
+
+    var STORAGE_KEY = 'queerdispatch_reading_mode';
+
+    function applyReadingMode(active) {
+        if (active) {
+            document.body.classList.add('reading-mode');
+        } else {
+            document.body.classList.remove('reading-mode');
+        }
+        var btn = document.getElementById('reading-mode-toggle');
+        if (btn) {
+            btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+            var label = btn.querySelector('.reading-mode-label');
+            if (label) {
+                label.textContent = active ? 'Exit Reading Mode' : 'Reading Mode';
+            }
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('reading-mode-toggle');
+        if (!btn) return;
+
+        // Restore persisted preference
+        var saved = localStorage.getItem(STORAGE_KEY);
+        if (saved === 'true') {
+            applyReadingMode(true);
+        }
+
+        btn.addEventListener('click', function() {
+            var isActive = document.body.classList.contains('reading-mode');
+            var next = !isActive;
+            applyReadingMode(next);
+            try {
+                localStorage.setItem(STORAGE_KEY, next ? 'true' : 'false');
+            } catch(e) {}
+        });
+    });
 })();
