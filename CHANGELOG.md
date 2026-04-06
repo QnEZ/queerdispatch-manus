@@ -7,6 +7,56 @@ Versions are numbered `MAJOR.MINOR.PATCH` and releases are listed in reverse chr
 
 ---
 
+## [1.5.0] — 2026-04-06
+
+### Added
+
+- **BigCloset TopShelf style** — 8th visual style inspired by [bigclosetr.us/topshelf](https://bigclosetr.us/topshelf), the long-running trans fiction community:
+  - Warm ivory background (`#fdf8f2`) — like aged paperback pages
+  - Deep burgundy rose accent (`#8b1a3a`) — BigCloset's signature colour
+  - Playfair Display italic headings for a romance-novel feel
+  - Georgia serif body text matching BC's traditional aesthetic
+  - Fleuron (❧) decorative section markers
+  - Soft rose-grey borders and blush cream card backgrounds
+  - All colours verified at WCAG AA (≥4.5:1) contrast ratios
+- **Style switcher updated** — BigCloset TopShelf now appears as the 8th option with warm ivory/burgundy colour swatches
+- **Customizer updated** — BigCloset TopShelf available as a default style option in Appearance → Customize → Theme Style
+
+---
+
+## [1.4.2] — 2026-03-24
+
+### Added
+
+- **Reading Mode toggle** — Article pages now include a reading mode button that strips sidebars, widens the content column, increases font size to 1.2rem, and sets line-height to 1.9 for comfortable long-form reading. Preference is saved to `localStorage`.
+- **Community AI feedback form** — A `mailto:` link on the showcase site allows community members to submit feedback on the AI Transparency Policy directly to the editorial team.
+
+### Changed
+
+- **CONTRIBUTING.md** — New contributor guide covering code style, CSS variable conventions, WCAG contrast requirements, and the pull request workflow.
+- **README.md** — Updated to v1.4.2 with Reading Mode and community feedback sections.
+- **readme.txt** — WordPress.org-formatted changelog updated to v1.4.2.
+
+---
+
+## [1.4.1] — 2026-03-20
+
+### Fixed
+
+- **Auto-updater: correct ZIP asset selection** — The updater was sometimes selecting the source-code ZIP instead of the packaged theme ZIP from GitHub Releases. Now explicitly selects the asset whose name ends in `-theme.zip`.
+
+---
+
+## [1.4.0] — 2026-03-18
+
+### Added
+
+- **Riot Grrrl style** — 7th visual style: hot pink (`#ff0080`) on near-black (`#0d0d0d`), Abril Fatface headings, cut-paste zine layout, offset card borders, feminist punk energy. All colours verified at WCAG AA.
+- **Style switcher colour swatches** — Each style option in the switcher panel now shows two colour dots (accent + background) for at-a-glance identification.
+- **Admin version page** — New **Appearance → QueerDispatch** admin page showing current version, GitHub release link, and one-click update check.
+
+---
+
 ## [1.3.2] — 2026-03-08
 
 ### Fixed
@@ -187,6 +237,10 @@ All styles now have `line-height: 1.85` on article body text. All 7 malformed se
 
 ---
 
+[1.5.0]: https://github.com/QnEZ/queerdispatch-manus/releases/tag/v1.5.0
+[1.4.2]: https://github.com/QnEZ/queerdispatch-manus/releases/tag/v1.4.2
+[1.4.1]: https://github.com/QnEZ/queerdispatch-manus/releases/tag/v1.4.1
+[1.4.0]: https://github.com/QnEZ/queerdispatch-manus/releases/tag/v1.4.0
 [1.3.2]: https://github.com/QnEZ/queerdispatch-manus/releases/tag/v1.3.2
 [1.3.1]: https://github.com/QnEZ/queerdispatch-manus/releases/tag/v1.3.1
 [1.3.0]: https://github.com/QnEZ/queerdispatch-manus/releases/tag/v1.3.0

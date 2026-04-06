@@ -223,6 +223,12 @@ function queerdispatch_get_styles() {
             'emoji'  => '🎸',
             'colors' => array( '#ff0080', '#0d0d0d' ),
         ),
+        'bigcloset'          => array(
+            'name'   => 'BigCloset TopShelf',
+            'desc'   => 'Warm ivory, rose & burgundy',
+            'emoji'  => '📚',
+            'colors' => array( '#8b1a3a', '#fdf8f2' ),
+        ),
     );
 }
 

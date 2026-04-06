@@ -4,21 +4,21 @@ Tags: news, magazine, lgbtq, accessibility, custom-colors, custom-logo, featured
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 1.4.2
+Stable tag: 1.5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Independent LGBTQIA2S+ news and community WordPress theme with 7 switchable aesthetic styles, a built-in tip submission system, and WCAG 2.1 AA compliant contrast.
+Independent LGBTQIA2S+ news and community WordPress theme with 8 switchable aesthetic styles, a built-in tip submission system, and WCAG 2.1 AA compliant contrast.
 
 == Built with Manus AI ==
 
-This theme was designed, coded, debugged, and documented entirely through an AI-assisted development workflow using **Manus AI** (https://manus.im), an autonomous general AI agent. Every style, feature, and accessibility fix from v1.0.0 through v1.4.2 was produced in collaboration with Manus. This is believed to be one of the first publicly released WordPress themes built end-to-end with an autonomous AI agent.
+This theme was designed, coded, debugged, and documented entirely through an AI-assisted development workflow using **Manus AI** (https://manus.im), an autonomous general AI agent. Every style, feature, and accessibility fix from v1.0.0 through v1.5.0 was produced in collaboration with Manus. This is believed to be one of the first publicly released WordPress themes built end-to-end with an autonomous AI agent.
 
 == Description ==
 
-QueerDispatch is a WordPress theme built for independent LGBTQIA2S+ news publications and community sites. It ships with seven distinct aesthetic styles that visitors can switch between at any time using a floating panel on the right side of every page. The selected style is saved in a browser cookie for one year, so returning visitors always see their preferred aesthetic.
+QueerDispatch is a WordPress theme built for independent LGBTQIA2S+ news publications and community sites. It ships with eight distinct aesthetic styles that visitors can switch between at any time using a floating panel on the right side of every page. The selected style is saved in a browser cookie for one year, so returning visitors always see their preferred aesthetic.
 
-**The seven styles are:**
+**The eight styles are:**
 
 * **Anarchist** — Black and red DIY punk zine with distressed textures and bold typography
 * **Goth** — Dark academia with ornate Victorian details, gothic serif fonts, and deep crimson accents
@@ -27,8 +27,9 @@ QueerDispatch is a WordPress theme built for independent LGBTQIA2S+ news publica
 * **Cyberpunk Queer** — Neon cyan and magenta on near-black with a scanline overlay and glitch effects
 * **Cottagecore Queer** — The only light-mode style: warm cream backgrounds, sage green accents, and floral motifs
 * **Riot Grrrl** — Hot pink and black feminist punk energy with zine-style typography
+* **BigCloset TopShelf** — Warm ivory pages, deep burgundy rose accents, Playfair Display italic headings, inspired by the long-running trans fiction community bigclosetr.us/topshelf
 
-All seven styles meet WCAG 2.1 Level AA contrast requirements (minimum 4.5:1 ratio) for body text, links, and muted text. Contrast ratios were systematically audited and corrected across v1.2.2 through v1.2.5.
+All eight styles meet WCAG 2.1 Level AA contrast requirements (minimum 4.5:1 ratio) for body text, links, and muted text. Contrast ratios were systematically audited and corrected across v1.2.2 through v1.2.5.
 
 **Tip submission system**
 
@@ -86,7 +87,7 @@ Yes. The style switcher panel is fully keyboard operable. Tab to the toggle butt
 
 = Does it work with the Block Editor (Gutenberg)? =
 
-Yes. The theme supports wide and full alignment for blocks. Standard block styles are respected across all seven aesthetic modes.
+Yes. The theme supports wide and full alignment for blocks. Standard block styles are respected across all eight aesthetic modes.
 
 = How do I add a breaking news ticker? =
 
@@ -114,10 +115,15 @@ Yes. The entire theme — design, code, debugging, accessibility auditing, and d
 2. The Goth style — single article page with sidebar.
 3. The Cyberpunk Queer style — homepage with neon scanline overlay.
 4. The Cottagecore Queer style — the only light-mode aesthetic.
-5. The style switcher panel open, showing all seven options.
+5. The style switcher panel open, showing all eight options.
 6. The tip submission page with Signal contact section.
 
 == Changelog ==
+
+= 1.5.0 — 2026-04-06 =
+* Added BigCloset TopShelf style — 8th visual style inspired by bigclosetr.us/topshelf, the long-running trans fiction community. Warm ivory background (#fdf8f2), deep burgundy rose accent (#8b1a3a), Playfair Display italic headings, Georgia serif body text, fleuron (❧) decorative markers. All colours verified at WCAG AA (≥4.5:1).
+* Updated style switcher to include BigCloset TopShelf as the 8th option with warm ivory/burgundy colour swatches.
+* Updated Customizer default style dropdown to include BigCloset TopShelf.
 
 = 1.4.2 — 2026-04-06 =
 * Added Reading Mode toggle to single post pages. Clicking the button switches body text to Georgia serif with wider line-height. Preference persists in localStorage.
@@ -165,9 +171,12 @@ Yes. The entire theme — design, code, debugging, accessibility auditing, and d
 * Fixed malformed CSS comma-separated selectors in all seven theme files causing scrollbar and pseudo-element styles to bleed onto the entire body and break style switching.
 
 = 1.2.1 =
-* Initial public release with seven styles and built-in auto-updater.
+* Initial public release with seven styles (eighth added in v1.5.0) and built-in auto-updater.
 
 == Upgrade Notice ==
+
+= 1.5.0 =
+Adds the BigCloset TopShelf style (8th aesthetic). Warm ivory and burgundy rose, Playfair Display headings, Georgia body text. Recommended for all users.
 
 = 1.4.2 =
 Adds Reading Mode toggle for article pages and a CONTRIBUTING.md guide. Recommended for all users.
